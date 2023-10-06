@@ -156,7 +156,7 @@ public class ApplicationFragment extends Fragment {
     CompOffAdapter compOffAdapter;
     LinearLayout lnBalance,lnDocument;*/
 
-
+//
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
