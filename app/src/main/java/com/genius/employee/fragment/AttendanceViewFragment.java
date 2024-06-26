@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
-import android.support.design.widget.FloatingActionButton;
+/*import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView;*/
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +20,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -36,6 +41,7 @@ import com.genius.employee.utility.APi;
 import com.genius.employee.utility.GPSTracker;
 import com.genius.employee.utility.NetworkConnectionCheck;
 import com.genius.employee.utility.Pref;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,10 +51,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class AttendanceViewFragment extends Fragment {
-
     View view;
     RecyclerView rvItem;
     ArrayList<MarkInViewModel> itemList = new ArrayList();
@@ -61,7 +68,6 @@ public class AttendanceViewFragment extends Fragment {
     TextView tvDate;
     ImageView imgBack, imgHome;
     GPSTracker gps;
-    ;
     double latitude = 0.00, longitude = 0.00;
     String cuDate;
     int co;
@@ -162,7 +168,7 @@ public class AttendanceViewFragment extends Fragment {
         llLoader.setVisibility(View.VISIBLE);
         llMain.setVisibility(View.GONE);
         llNoData.setVisibility(View.GONE);
-        String surl = APi.sUrl+"get_OfflineDailyLogActivity?AEMEmployeeID=" + pref.getEmpId() + "&Year=0&Month=0&AttendanceDate=" + cuDate + "&Operation=1";
+        String surl = APi.sGetOfflineDailyLogActivityApi+"AEMEmployeeID=" + pref.getSecureEmpId() + "&Year=0&Month=0&AttendanceDate=" + cuDate + "&Operation=1";
         Log.d("inputactivity", surl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
                 new Response.Listener<String>() {
@@ -239,7 +245,12 @@ public class AttendanceViewFragment extends Fragment {
                 Log.e("ert", error.toString());
             }
         }) {
-
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+pref.getAccessToken());
+                return params;
+            }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
@@ -279,7 +290,6 @@ public class AttendanceViewFragment extends Fragment {
         fbAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (connectionCheck.isNetworkAvailable()) {
                     pd.setMessage("Loading....");
                     pd.setCancelable(false);
@@ -300,7 +310,6 @@ public class AttendanceViewFragment extends Fragment {
         llAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (connectionCheck.isNetworkAvailable()) {
                     pd.setMessage("Loading....");
                     pd.setCancelable(false);

@@ -60,46 +60,53 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp">
+
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
                     <LinearLayout
-                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical"
                         android:paddingLeft="5dp"
-                        android:layout_marginTop="10dp">
+                        android:visibility="visible">
 
-                        <android.support.v7.widget.RecyclerView
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvItem"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/rvItem"></android.support.v7.widget.RecyclerView>
+                            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.2"></LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.15">
+
                                 <LinearLayout
                                     android:id="@+id/llAdd"
-                                    android:gravity="center"
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
+                                    android:layout_marginBottom="20dp"
                                     android:background="@drawable/lldesign2"
-                                    android:layout_marginBottom="20dp">
-                                    <ImageView
+                                    android:gravity="center">
 
+                                    <ImageView
                                         android:layout_width="32dp"
                                         android:layout_height="32dp"
                                         android:src="@drawable/addimg"></ImageView>
                                 </LinearLayout>
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -134,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom|end">
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fbAdd"
                 android:visibility="visible"
                 android:layout_width="50dp"

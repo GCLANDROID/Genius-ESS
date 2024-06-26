@@ -21,8 +21,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
+/*import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;*/
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -46,6 +46,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
 
 
 import com.android.volley.DefaultRetryPolicy;

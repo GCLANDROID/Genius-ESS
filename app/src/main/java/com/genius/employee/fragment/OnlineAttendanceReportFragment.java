@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
-import android.support.v4.app.Fragment;
+/*import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView;*/
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +23,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,6 +53,8 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class OnlineAttendanceReportFragment extends Fragment {
@@ -209,13 +216,6 @@ public class OnlineAttendanceReportFragment extends Fragment {
                 customType(getContext(), "left-to-right");
             }
         });
-
-
-
-
-
-
-
     }
 
     private void getItem(){
@@ -223,7 +223,7 @@ public class OnlineAttendanceReportFragment extends Fragment {
         llLoader.setVisibility(View.VISIBLE);
         llMain.setVisibility(View.GONE);
         llNoData.setVisibility(View.GONE);
-        String surl = APi.sUrl+"get_OfflineDailyLogActivity?AEMEmployeeID="+pref.getEmpId()+"&Year="+year+"&Month="+month+"&AttendanceDate=0&Operation=6";
+        String surl = APi.sGetOfflineDailyLogActivityApi+"AEMEmployeeID="+pref.getSecureEmpId()+"&Year="+year+"&Month="+month+"&AttendanceDate=0&Operation=6";
         Log.d("inputactivity", surl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
                 new Response.Listener<String>() {
@@ -259,28 +259,21 @@ public class OnlineAttendanceReportFragment extends Fragment {
                                     obj2.setPunchOutTime(PunchOutTime);;
                                     obj2.setFlag("1");
                                     itemList.add(obj2);
-
-
                                 }
+
                                 setAdapter();
 
                                 llLoader.setVisibility(View.GONE);
                                 llMain.setVisibility(View.VISIBLE);
                                 llNoData.setVisibility(View.GONE);
-
                             } else {
-
                                 llLoader.setVisibility(View.GONE);
                                 llMain.setVisibility(View.GONE);
                                 llNoData.setVisibility(View.VISIBLE);
-
                             }
-
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                             // Toast.makeText(AttendanceReportActivity.this, "Volly Error", Toast.LENGTH_LONG).show();
-
                         }
 
                     }
@@ -290,13 +283,16 @@ public class OnlineAttendanceReportFragment extends Fragment {
                 llLoader.setVisibility(View.VISIBLE);
                 llMain.setVisibility(View.GONE);
                 llNoData.setVisibility(View.GONE);
-
-
                 // Toast.makeText(AttendanceReportActivity.this, "volly 2"+error.toString(), Toast.LENGTH_LONG).show();
                 Log.e("ert", error.toString());
             }
         }) {
-
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+pref.getAccessToken());
+                return params;
+            }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
@@ -313,7 +309,7 @@ public class OnlineAttendanceReportFragment extends Fragment {
         pd.setCancelable(false);
         pd.show();
 
-        final String surl = APi.sUrl+"ManageEmployee/Hierarchy?EmployeeID=" + pref.getEmpId();
+        final String surl = APi.sManageEmployeeHierarchyApi + "EmployeeID=" + pref.getSecureEmpId();
         Log.d("inputLogin", surl);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
@@ -329,14 +325,11 @@ public class OnlineAttendanceReportFragment extends Fragment {
                             boolean responseStatus = job1.optBoolean("responseStatus");
                             if (responseStatus) {
                                 // Toast.makeText(getApplicationContext(),responseText,Toast.LENGTH_LONG).show();
-
                                 JSONArray responseData = job1.optJSONArray("responseData");
                                 for (int i = 0; i < responseData.length(); i++) {
                                     JSONObject obj = responseData.getJSONObject(i);
                                     lebelId = obj.optString("LevelID");
                                     pref.saveLebelId(lebelId);
-
-
                                 }
                                 pd.dismiss();
                                 if (lebelId.equals("2060000003")||lebelId.equals("2060000005")||lebelId.equals("2060000010")||lebelId.equals("2060000012")||pref.getEmpId().equals("2070002087")) {
@@ -372,13 +365,16 @@ public class OnlineAttendanceReportFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 pd.dismiss();
-
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
-
                 Log.e("ert", error.toString());
             }
         }) {
-
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+pref.getAccessToken());
+                return params;
+            }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);

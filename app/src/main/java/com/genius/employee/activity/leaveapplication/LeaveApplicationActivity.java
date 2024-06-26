@@ -3,13 +3,17 @@ package com.genius.employee.activity.leaveapplication;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
+/*import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;*/
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.genius.employee.R;
 import com.genius.employee.activity.EDashBoardActivity;
@@ -53,24 +57,28 @@ public class LeaveApplicationActivity extends AppCompatActivity {
                 loadApplicationFragment();
             }
         });
+
         llApproval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadApproverFragment();
             }
         });
+
         llDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadDetailsFragment();
             }
         });
+
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,8 +87,6 @@ public class LeaveApplicationActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
 
@@ -112,12 +118,9 @@ public class LeaveApplicationActivity extends AppCompatActivity {
         llDetails.setBackgroundColor(Color.parseColor("#FFFFFF"));
         llApproval.setBackgroundColor(Color.parseColor("#006CFF"));
 
-
         tvApllication.setTextColor(Color.parseColor("#006CFF"));
         tvDetails.setTextColor(Color.parseColor("#006CFF"));
         tvApproval.setTextColor(Color.parseColor("#FFFFFF"));
-
-
     }
 
 
@@ -147,7 +150,4 @@ public class LeaveApplicationActivity extends AppCompatActivity {
     public void  approverHidden(){
         llApproval.setVisibility(View.GONE);
     }
-
-
-
 }
