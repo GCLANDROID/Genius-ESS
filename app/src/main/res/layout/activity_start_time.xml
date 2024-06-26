@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.StartTimeActivity"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/topbar"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/ic_arrow_back_black_24dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvToolBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Registration"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imgHome"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/homeicon" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="30dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp">
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start Time:"
+                            android:textColor="@color/textcolor"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/tvDate"
+                            android:textColor="@color/color6"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Please Enter  Client Name"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lldesign20">
+                            <EditText
+                                android:id="@+id/etClintName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:textColor="@color/color6"
+                                android:textSize="15sp"
+                                android:paddingLeft="10dp"
+                                android:hint="e.g. xyz"/>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Please Enter Contact  Person's Name"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lldesign20">
+                            <EditText
+                                android:id="@+id/etContactperson"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:textColor="@color/color6"
+                                android:textSize="15sp"
+                                android:paddingLeft="10dp"
+                                android:hint="e.g. xyz"/>
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Please select purpose of visit"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lldesign20">
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/spPurpose"></Spinner>
+
+
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remarks:"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lldesign20">
+                            <EditText
+                                android:id="@+id/etRemarks"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:textColor="@color/color6"
+                                android:textSize="15sp"
+                                android:paddingLeft="10dp"
+                                android:hint="e.g. xyz"/>
+
+
+                        </LinearLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@drawable/topbar"
+                                android:textColor="@color/white"
+                                android:text="REGISTER"
+                                android:id="@+id/btnReg"/>
+                            <LinearLayout
+                                android:visibility="gone"
+                                android:id="@+id/llLoad"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/lldesign12"
+                                android:gravity="center">
+                                <ProgressBar
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"></ProgressBar>
+
+                            </LinearLayout>
+                        </FrameLayout>
+
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#52BDBDBD"
+            android:gravity="center"
+            android:id="@+id/llLoader"
+            android:visibility="gone">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/llRetry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:visibility="gone"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/ic_refresh" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llPD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#88000000"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/lldesign"
+                        android:gravity="center">
+                        <pl.droidsonroids.gif.GifImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/gifloader"></pl.droidsonroids.gif.GifImageView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>

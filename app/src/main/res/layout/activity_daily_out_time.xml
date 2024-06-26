@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.DailyOutTimeActivity">
+     <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="65dp"
+                 android:background="@drawable/topbar"
+                 android:orientation="horizontal">
+
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="0.5">
+
+                     <ImageView
+                         android:id="@+id/imgBack"
+                         android:layout_width="25dp"
+                         android:layout_height="25dp"
+                         android:layout_gravity="center"
+                         android:layout_marginLeft="10dp"
+                         android:background="@drawable/ic_arrow_back_black_24dp" />
+
+
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:gravity="center">
+
+                     <TextView
+                         android:id="@+id/tvToolBar"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="2dp"
+                         android:text="Out-Time"
+                         android:textColor="@android:color/white"
+                         android:textSize="18sp" />
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="0.5"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:id="@+id/imgHome"
+                         android:layout_width="25dp"
+                         android:layout_height="25dp"
+                         android:background="@drawable/homeicon" />
+
+
+                 </LinearLayout>
+             </LinearLayout>
+
+             <ScrollView
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:orientation="vertical">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:orientation="vertical"
+                         android:paddingLeft="20dp"
+                         android:paddingTop="30dp"
+                         android:paddingRight="20dp">
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="Client Name:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="15sp" />
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="5dp"
+                             android:id="@+id/tvClintName"
+                             android:textColor="@color/color6"
+                             android:textSize="15sp" />
+                         <TextView
+                             android:layout_marginTop="20dp"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="Registration Time:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="15sp" />
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="5dp"
+                             android:id="@+id/tvRegTime"
+                             android:textColor="@color/color6"
+                             android:textSize="15sp" />
+                         <TextView
+                             android:layout_marginTop="20dp"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="In Time:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="15sp" />
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="5dp"
+                             android:id="@+id/tvInTime"
+                             android:textColor="@color/color6"
+                             android:textSize="15sp" />
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="OUT Time:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="5dp"
+                             >
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_gravity="center"
+                                 android:id="@+id/tvOutTime"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="OUT Location:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="5dp"
+                             >
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_gravity="center"
+                                 android:id="@+id/tvAddress"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="Visiting Person's  name:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="50dp"
+                             android:layout_marginTop="5dp"
+                             android:background="@drawable/lldesign20"
+                             android:paddingLeft="10dp">
+
+                             <EditText
+                                 android:id="@+id/etContactPerson"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center"
+                                 android:background="@null"
+                                 android:hint="e.g xyz"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="Visiting Person's Contact Number:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="50dp"
+                             android:layout_marginTop="5dp"
+                             android:background="@drawable/lldesign20"
+                             android:paddingLeft="10dp">
+
+                             <EditText
+                                 android:maxLength="10"
+                                 android:id="@+id/etContactNumber"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center"
+                                 android:background="@null"
+                                 android:hint="e.g 122333939"
+                                 android:inputType="number"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="Visiting Person's  Email:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="50dp"
+                             android:layout_marginTop="5dp"
+                             android:background="@drawable/lldesign20"
+                             android:paddingLeft="10dp">
+
+                             <EditText
+                                 android:id="@+id/etEmail"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center"
+                                 android:background="@null"
+                                 android:hint="e.g xyz@gmail.com"
+                                 android:inputType="textEmailAddress"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:text="Purpouse:"
+                             android:textColor="@color/textcolor"
+                             android:textSize="13sp" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="70dp"
+                             android:layout_marginTop="5dp"
+                             android:background="@drawable/lldesign20"
+                             android:paddingLeft="10dp">
+
+                             <EditText
+                                 android:id="@+id/etRemarks"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center"
+                                 android:background="@null"
+                                 android:inputType="text"
+                                 android:textColor="@color/color6"
+                                 android:textSize="13sp" />
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="30dp"
+                             android:orientation="horizontal">
+
+                             <LinearLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="match_parent"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:orientation="vertical">
+
+                                 <TextView
+                                     android:textAlignment="center"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:text="Client's Office/Visiting Card Image"
+                                     android:textColor="@color/textcolor"
+                                     android:textSize="13sp" />
+
+                                 <ImageView
+                                     android:id="@+id/imgCamera"
+                                     android:layout_width="45dp"
+                                     android:layout_height="45dp"
+                                     android:src="@drawable/ic_photo" />
+                             </LinearLayout>
+
+                             <LinearLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="match_parent"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:orientation="vertical">
+
+                                 <TextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:text="Visitor's Signature"
+                                     android:textColor="@color/textcolor"
+                                     android:textSize="13sp" />
+
+                                 <ImageView
+                                     android:id="@+id/imgSign"
+                                     android:layout_width="45dp"
+                                     android:layout_height="45dp"
+                                     android:layout_marginTop="5dp"
+                                     android:src="@drawable/ic_contract" />
+                             </LinearLayout>
+                         </LinearLayout>
+
+                         <FrameLayout
+                             android:layout_marginTop="30dp"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
+                             <Button
+                                 android:id="@+id/btnOut"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="50dp"
+                                 android:layout_marginBottom="20dp"
+                                 android:background="@drawable/topbar"
+                                 android:text="Out Mark"
+                                 android:textColor="@color/white"
+                                 android:textSize="14sp" />
+                             <TextView
+                                 android:visibility="gone"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:id="@+id/tvText"
+                                 android:text="Your current address not found.Please enable your GPS or make it in high accuracy."></TextView>
+                             <LinearLayout
+                                 android:visibility="gone"
+                                 android:id="@+id/llLoad"
+                                 android:layout_width="50dp"
+                                 android:layout_height="50dp"
+                                 android:layout_gravity="center"
+                                 android:background="@drawable/lldesign12"
+                                 android:gravity="center">
+                                 <ProgressBar
+                                     android:layout_width="30dp"
+                                     android:layout_height="30dp"></ProgressBar>
+
+                             </LinearLayout>
+                         </FrameLayout>
+
+
+                     </LinearLayout>
+                 </LinearLayout>
+             </ScrollView>
+
+         </LinearLayout>
+         <LinearLayout
+
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#52BDBDBD"
+         android:gravity="center"
+         android:id="@+id/llLoader"
+         android:visibility="gone">
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:id="@+id/llRetry"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+                 <ImageView
+                     android:visibility="gone"
+                     android:layout_width="55dp"
+                     android:layout_height="55dp"
+                     android:layout_gravity="center"
+                     android:layout_marginLeft="10dp"
+                     android:background="@drawable/ic_refresh" />
+
+             </LinearLayout>
+             <LinearLayout
+                 android:id="@+id/llPD"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="#88000000"
+                 android:gravity="center">
+                 <LinearLayout
+                     android:layout_width="150dp"
+                     android:layout_height="150dp"
+                     android:background="@drawable/lldesign"
+                     android:gravity="center">
+                     <pl.droidsonroids.gif.GifImageView
+                         android:layout_width="50dp"
+                         android:layout_height="50dp"
+                         android:src="@mipmap/gifloader"></pl.droidsonroids.gif.GifImageView>
+                 </LinearLayout>
+
+             </LinearLayout>
+
+         </FrameLayout>
+
+     </LinearLayout>
+
+
+     </FrameLayout>
+
+
+</LinearLayout>

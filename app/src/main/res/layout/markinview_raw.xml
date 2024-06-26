@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="0.2"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/dcolor"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/bar1"></LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@drawable/lldesign10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@color/dot_dark_screen1"></ImageView>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/bar1"></LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llItem"
+            android:backgroundTint="@color/textcolor"
+            android:background="@drawable/lldesign"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/tvAdress"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"></TextView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

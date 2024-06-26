@@ -1,0 +1,62 @@
+<resources>
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen5</item>
+        <item>@color/dot_light_screen6</item>
+        <item>@color/dot_light_screen7</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen5</item>
+        <item>@color/dot_dark_screen6</item>
+        <item>@color/dot_dark_screen7</item>
+    </array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <color name="dot_dark_screen1">#6f11d2</color>
+
+    <color name="dot_dark_screen2">#424bec</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <color name="dot_dark_screen5">#8842ac</color>
+    <color name="dot_dark_screen6">#7a3e99</color>
+    <color name="dot_dark_screen7">#5f2f78</color>
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen5">#e4b5fc</color>
+    <color name="dot_light_screen6">#e4b5fc</color>
+    <color name="dot_light_screen7">#e4b5fc</color>
+    <string name="app_name">Genius.ESS</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAfhvl3a57BdGtWJdPlz5M-ywMX9W-C4Gk</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">NEXT</string>
+
+    <string name="skip">SKIP</string>
+
+    <string name="start">GOT IT</string>
+
+    <string name="camera_permission_confirmation">This app demonstrates the usage of CameraView. In order to do that, it needs permission to access camera.</string>
+    <string name="camera_permission_not_granted">Camera app cannot do anything without camera permission.</string>
+    <string name="picture_taken">Picture taken</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="switch_flash">Switch flash</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="flash_auto">Flash auto</string>
+    <string name="flash_off">Flash off</string>
+    <string name="flash_on">Flash on</string>
+    <string name="take_picture">Recognize</string>
+    <string name="add_person">Add</string>
+    <string name="title_activity_add_person">AddPerson</string>
+</resources>

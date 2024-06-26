@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CurrentCTCFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+      <LinearLayout
+          android:visibility="gone"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+
+              android:gravity="center"
+              android:visibility="gone">
+              <pl.droidsonroids.gif.GifImageView
+                  android:layout_width="50dp"
+                  android:layout_height="50dp"
+                  android:src="@mipmap/gifloader"></pl.droidsonroids.gif.GifImageView>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="14sp"
+                  android:textColor="@color/designcolor"
+                  android:text="Loading.."></TextView>
+          </LinearLayout>
+          <LinearLayout
+
+              android:visibility="visible"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:orientation="vertical"
+              android:layout_marginLeft="10dp">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/color8"
+                      android:textSize="14sp"
+                      android:text="Effective Date"/>
+                  <TextView
+                      android:id="@+id/tvEffDate"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/backcolor"
+                      android:textSize="12sp"
+                      />
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/color5"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"></LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/color8"
+                      android:textSize="14sp"
+                      android:text="Monthly Gross"/>
+                  <TextView
+                      android:id="@+id/tvMonthlyGross"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/backcolor"
+                      android:textSize="12sp"
+                      />
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/color5"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"></LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/color8"
+                      android:textSize="14sp"
+                      android:text="Monthly CTC"/>
+                  <TextView
+                      android:id="@+id/tvMonthlyCTC"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/backcolor"
+                      android:textSize="12sp"
+                      />
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/color5"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"></LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/color8"
+                      android:textSize="14sp"
+                      android:text="Yearly Gross."/>
+                  <TextView
+                      android:id="@+id/tvYearlyGross"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/backcolor"
+                      android:textSize="12sp"
+                      />
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/color5"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"></LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/color8"
+                      android:textSize="12sp"
+                      android:text="Yearly CTC."/>
+                  <TextView
+                      android:id="@+id/tvYearlyCTC"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/backcolor"
+                      android:textSize="14sp"
+                      />
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/color5"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginBottom="5dp"></LinearLayout>
+
+
+
+
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:visibility="gone"
+              android:orientation="vertical"
+              >
+              <ImageView
+                  android:layout_width="60dp"
+                  android:layout_height="60dp"
+                  android:src="@drawable/dataicon"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="16sp"
+                  android:textColor="@android:color/black"
+                  android:text="OOPS!No Record Found"
+                  android:layout_marginTop="10dp"/>
+
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:visibility="gone"
+              android:orientation="vertical"
+              >
+              <ImageView
+                  android:layout_width="60dp"
+                  android:layout_height="60dp"
+                  android:src="@drawable/nowifiicon"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="16sp"
+                  android:textColor="@android:color/black"
+                  android:text="OOPS!Slow Internet Connection"
+                  android:layout_marginTop="10dp"/>
+
+          </LinearLayout>
+      </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/llLoader"
+        android:gravity="center"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/rvItem"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/llNoData">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/dataicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="OOPS!No Record Found"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/llCoonection">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/nowifiicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="OOPS!Slow Internet Connection"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

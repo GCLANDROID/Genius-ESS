@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OTPActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/topbar"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="OTP verfication"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/textcolor"
+            android:text="An OTP has been sent to your registered mobile number. \n\n There might be some delay in receiving the OTP due to \n heavy traffic"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Enter Your OTP"
+            android:textColor="@color/dcolor"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"></TextView>
+        <EditText
+            android:paddingLeft="5dp"
+            android:textColor="@color/dcolor"
+            android:layout_marginTop="10dp"
+            android:id="@+id/etOTP"
+            android:maxLength="6"
+            android:inputType="number"
+            android:backgroundTint="@color/bar1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/lldesign"></EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/dcolor"
+                android:text="Resend OTP after "></TextView>
+            <com.dhims.timerview.TimerTextView
+                android:id="@+id/timerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/textcolor"
+                android:background="@drawable/lldesign"
+                android:textColor="@color/white"
+                android:text="VERIFY"></Button>
+            <Button
+                android:layout_marginLeft="20dp"
+                android:id="@+id/btnResend"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/skyblue"
+                android:background="@drawable/lldesign"
+                android:textColor="@color/white"
+                android:text="RESEND"></Button>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

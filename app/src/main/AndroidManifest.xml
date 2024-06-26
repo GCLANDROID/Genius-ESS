@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.genius.employee">
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:name=".utility.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.WFHAddressDetailsActivity"></activity>
+        <activity
+            android:name=".activity.AndroidXCameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.QRCodeScannerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.WebPayslipActivity"
+            android:exported="false"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FeatureSuggestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OTPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PDFViewActivity"
+            android:exported="false" />
+        <activity android:name=".activity.FirebaseAdminActivity" />
+        <activity android:name=".activity.VoiceAssistantActivity" />
+        <activity android:name=".activity.SecondDoseCertificateActivity" />
+        <activity android:name=".activity.MapAttendnaceActivity" />
+        <activity android:name=".activity.CovidStatusReportActivity" />
+        <activity android:name=".activity.CovidNegativeReportActivity" />
+        <activity android:name=".activity.FamilyMemeberCovidStatusActivity" />
+        <activity android:name=".activity.SelfCovidDecActivity" />
+        <activity android:name=".activity.CovidFormActivity" />
+        <activity android:name=".activity.AppriselLetterActivity" />
+        <activity android:name=".activity.PFWebViewActivity" />
+        <activity android:name=".activity.CliamManageActivity" />
+        <activity android:name=".activity.ReimbursementDashboardActivity" />
+        <activity android:name=".activity.UpdateActivity" />
+        <activity android:name=".activity.AppointmentLetterActivity" />
+        <activity android:name=".activity.AcceptanceDialogActivity" />
+        <activity android:name=".activity.HealthCardActivity" />
+        <activity android:name=".activity.Declation2Activity" />
+        <activity android:name=".activity.Declation1Activity" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity android:name=".activity.WFHTeamReportActivity" />
+        <activity android:name=".activity.WFHEmpListActivity" />
+        <activity android:name=".activity.WFHReportDashboardActivity" />
+        <activity android:name=".activity.MarkInReportActivity" />
+        <activity
+            android:name=".activity.MarkInManageActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.MarkInAttendanceDashboardActivity"
+            android:parentActivityName=".activity.EDashBoardActivity" />
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.TrackingReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.VisitDetailsActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.TourEmployeeTreeListActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.TeamReportDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.SupReportDashboardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.EmployeeTreeListActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.NumberVisitActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.PayslipActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.StartTimeActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.DailyReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.DailyActivityDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.DailyOutTimeActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.DailyInTimeActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.DailyActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.VisitEmployeeTreeListActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.StoryBoardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.EDashBoardActivity"
+            android:finishOnCloseSystemDialogs="true"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:parentActivityName=".activity.EDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.AttendanceActivity"
+            android:parentActivityName=".activity.EDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.PayrollActivity"
+            android:parentActivityName=".activity.EDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.LeaveDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.LeaveBalanceActivity"
+            android:parentActivityName=".activity.EDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.IncomeTaxActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.AttendanceReportActivity"
+            android:parentActivityName=".activity.EDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.SalaryActivity"
+            android:parentActivityName=".activity.PayrollActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.CuurentCTCActivity"
+            android:parentActivityName=".activity.PayrollActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.CTCDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.HistoryCTCActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.APiHitActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.MapReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.TourViewReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.TrackMapActivity"
+            android:screenOrientation="userPortrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <receiver
+            android:name=".receiver.TrackingAlarm"
+            android:process=":remote" />
+
+        <service
+            android:name=".service.LocationTrackingService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".activity.HolidayActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FeedbackLoginActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FeedBackDashBoardActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.ClientListActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.ClintOfficeActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.ContactPersonActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FeedBackActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FeedBackreportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.AnsReportActivity"
+            android:screenOrientation="userPortrait"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".activity.MarkInViewActivity"
+            android:parentActivityName=".activity.MarkInAttendanceDashboardActivity" />
+        <activity
+            android:name=".activity.Declation1ReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.Declation2ReportActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.FRDashboard"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.PreviewActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".activity.MarkInManageWithFaceActivity"
+            android:screenOrientation="userPortrait" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_name" />
+
+        <activity
+            android:name="com.google.android.cameraview.LongImageCameraActivity"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name="com.google.android.cameraview.LongImageBackCameraActivity"
+            android:screenOrientation="userPortrait" />
+        <activity android:name=".activity.leaveapplication.LeaveApplicationActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.genius.employee"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" /> <!-- Create this XML resource -->
+        </provider>
+    </application>
+
+</manifest>

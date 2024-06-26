@@ -1,0 +1,54 @@
+package com.genius.employee.utility;
+
+public class APi {
+    public static String sUrl="https://cloud.geniusconsultant.com/GeniusESS/API/";
+    public static double lattitude=0.0;
+    public static double longitude=0.0;
+    public static String baseurl="http://171.16.1.23/GeniusESSMobile/DEM/api/v2/";
+    public static String baseurl2="http://171.16.1.23/GeniusESSMobile/api/v2/";
+    public static String sLoginApi=baseurl+"token";
+    public static String sAddDeviceDetailsApi=baseurl2+"DEMNotification/AddDeviceDetails?";
+    public static String sGetLastWorkingDayApi=baseurl2+"Utility/GetLastWorkingDay?";
+    public static String sGet_apkversionApi=baseurl2+"Utility/Get_apkversion";
+    public static String sisPasswordExpireApi=baseurl2+"ManageEmployee/isPasswordExpire?";
+    public static String sManageAppointmentIsAcceptedApi=baseurl2+"ManageAppointment/IsAccepted?";
+    public static String sManageEmployeeHierarchyApi=baseurl2+"ManageEmployee/Hierarchy?";
+    public static String sGetPFManagementURLApi=baseurl2+"Utility/GetPFManagementURL?";
+    public static String sGetPFGetOTPApi=baseurl2+"IPConfig/GetOTP?";
+    public static String sGetOfflineDailyLogActivityApi=baseurl2+"get_OfflineDailyLogActivity?";
+    public static String sSalaryHistoryApi=baseurl2+"ManageCTC/SalaryHistory?";
+    public static String sGetFinancialYearApi=baseurl2+"Utility/GetFinancialYear";
+    public static String sManageLeaveBalanceApi=baseurl2+"ManageLeaveBalance?";
+    public static String sGetHolidayApi=baseurl2+"ManageEmployee/GetHoliday?";
+    public static String sManageEmployeeApi=baseurl2+"ManageEmployee?";
+    public static String sBankAccountApi=baseurl2+"ManageCTC/BankAccount?";
+    public static String sEMPCTCHistoryApi=baseurl2+"ManageCTC/EMPCTCHistory?";
+    public static String sAddDailyLogv2Api=baseurl2+"DailyLogTatGY/AddDailyLogv2";
+    public static String sGetMonthWiseAttendanceApi=baseurl2+"Utility/GetMonthWiseAttendance?";
+    public static String sGetProductsApi=baseurl2+"SuggestedFeatures/GetProducts";
+    public static String sSaveFeatureApi=baseurl2+"SuggestedFeatures/SaveFeature";
+    public static String sGetAttendanceMonthApi=baseurl2+"Utility/GetAttendanceMonth?";
+    public static String sAttendanceDateReportApi=baseurl2+"ManageEmployee/AttendanceDateReport?";
+    public static String sOTPValidateApi=baseurl2+"IPConfig/OTPValidate?";
+    public static String sPostLoginApi=baseurl2+"ManageLogin/PostLogin?";
+    public static String sQRLoginApi=baseurl2+"Utility/QRLogin";
+    public static String sGetClientVisitReportByDateApi=baseurl2+"ClientVisit/GetClientVisitReportByDate?";
+    public static String sHierarchyListApi=baseurl2+"ManageEmployee/HierarchyList?";
+    public static String sClientVisitApi=baseurl2+"ClientVisit?";
+    public static String sAddVisitLocationMasterApi=baseurl2+"ClientVisit/AddVisitLocationMaster";
+    public static String sGetVisitLocationMasterApi=baseurl2+"ClientVisit/GetVisitLocationMaster?";
+    public static String sAddVisitOutMarkMasterApi=baseurl2+"ClientVisit/AddVisitOutMarkMaster";
+    public static String sGetClientTourViewApi=baseurl2+"ClientVisit/GetClientTourView?";
+    public static String sChangePasswordApi=baseurl2+"ChangePassword";
+    public static String sGetClientVisitReportByMonthApi=baseurl2+"ClientVisit/GetClientVisitReportByMonth?";
+    public static String sAddClientVisitMasterApi=baseurl2+"ClientVisit/AddClientVisitMaster";
+    public static String sGetAppointmentApi=baseurl2+"ManageAppointment/GetAppointment?";
+    public static String sManageAppointmentSaveDocReceivedApi=baseurl2+"ManageAppointment/SaveDocReceived";
+    public static String sBulkAppLetterIsAcceptedApi=baseurl2+"BulkAppLetter/IsAccepted?";
+    public static String sSrAppLetterIsAcceptedApi=baseurl2+"SrAppLetter/IsAccepted?";
+    public static String sBulkAppLetterGetBulkLetterApi=baseurl2+"BulkAppLetter/GetBulkLetter?";
+    public static String sSrAppLetterGetSrLetterApi=baseurl2+"SrAppLetter/GetSrLetter?";
+    public static String sBulkAppLetterSaveDocReceivedApi=baseurl2+"BulkAppLetter/SaveDocReceived";
+    public static String sSrAppLetterSaveDocReceivedApi=baseurl2+"SrAppLetter/SaveDocReceived";
+
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#30B3A3</color>
+    <color name="colorPrimaryDark">#0059D6</color>
+    <color name="colorAccent">#085A96</color>
+    <color name="textcolor">#006CFF</color>
+    <color name="barcolor">#868789</color>
+    <color name="backcolor">#30B3A3</color>
+    <color name="designcolor">#060606</color>
+    <color name="dcolor">#363535</color>
+    <color name="designcolor1">#075994</color>
+    <color name="maincolor">#075994</color>
+    <color name="bar1">#EDE4E4</color>
+    <color name="color1">#f21a7cc2</color>
+    <color name="color2">#cc0512</color>
+    <color name="color3">#ef02c0</color>
+    <color name="color4">#989997</color>
+    <color name="color5">#d6d6d6</color>
+    <color name="color6">#30B3A3</color>
+    <color name="color7">#8f8f8f</color>
+    <color name="color8">#085A96</color>
+    <color name="color9">#00A15B</color>
+    <color name="color10">#FFFFFF</color>
+    <color name="skyblue">#62A4FB</color>
+    <color name="redcolor">#E31111</color>
+    <color name="textcolor1">#85B8FF</color>
+    <color name="requested">#79AB00</color>
+    <color name="approved">#3C763D</color>
+    <color name="rejected">#E40303</color>
+    <color name="pending">#FFC800</color>
+    <color name="black">#000000</color>
+</resources>

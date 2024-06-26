@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/lldesign9">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Relationship:"></TextView>
+        <TextView
+            android:id="@+id/tvRelationship"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+        <TextView
+            android:id="@+id/tvCovidStatus"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Date:"></TextView>
+        <TextView
+            android:id="@+id/tvCovidDate"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llCovidFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Document:"></TextView>
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvcovidDocName"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Vaccination Status:"></TextView>
+        <TextView
+            android:id="@+id/tvVaccineStatus"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Date:"></TextView>
+        <TextView
+            android:id="@+id/tvVaccineDate"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:text="Covid Status:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:background="@color/color1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="Vaccination Status:"></TextView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll1stDose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="1st Dose:"></TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvVaccineDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Covid Status:"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll2ndDose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="2nd Dose:"></TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvScndVaccineDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Covid Status:"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBoosterDose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color2"
+            android:textSize="14sp"
+            android:text="Booster Dose:"></TextView>
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvBoosterDose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Covid Status:"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textcolor"
+        android:layout_marginTop="5dp"></LinearLayout>
+
+</LinearLayout>

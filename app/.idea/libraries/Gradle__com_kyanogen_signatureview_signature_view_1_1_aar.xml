@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kyanogen.signatureview:signature-view:1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4e41cfd5b5a4a70f0eee6ea1582680b/signature-view-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4e41cfd5b5a4a70f0eee6ea1582680b/signature-view-1.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kyanogen.signatureview/signature-view/1.1/93e866585c6bcf00eb776de1b2a7438a6ce4b9a5/signature-view-1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kyanogen.signatureview/signature-view/1.1/a6ad409ea6cdd69175d6a8fc500a3c38ea6acc24/signature-view-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

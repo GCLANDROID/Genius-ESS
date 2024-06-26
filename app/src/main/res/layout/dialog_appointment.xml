@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="250dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/lldesign7">
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color5"
+            android:gravity="right">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/textcolor"
+                    android:id="@+id/tvTitle"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                >
+                <ImageView
+                    android:tint="@android:color/holo_red_dark"
+                    android:id="@+id/imgCancel"
+                    android:layout_gravity="center"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/cancelicon"></ImageView>
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvText"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/textcolor"
+            android:text="Your Appointment Letter is ready to Accept"></TextView>
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/btnOk"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@color/color1"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="OK"
+            android:textColor="@android:color/white"></Button>
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/tvFAQ"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/maincolor"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="Click here for Onboarding FAQs"></TextView>
+
+
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:id="@+id/llSkip"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/textcolor"
+                android:text="- OR -"></TextView>
+            <Button
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                android:id="@+id/btnSkip"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@android:color/holo_red_dark"
+                android:layout_gravity="center"
+                android:text="Upload Later"
+                android:textColor="@android:color/white"></Button>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

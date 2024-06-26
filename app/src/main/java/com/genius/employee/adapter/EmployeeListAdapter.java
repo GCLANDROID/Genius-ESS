@@ -1,0 +1,74 @@
+package com.genius.employee.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+//import android.support.annotation.NonNull;
+//import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.genius.employee.R;
+
+import com.genius.employee.activity.TrackMapActivity;
+import com.genius.employee.model.AttendanceModel;
+import com.genius.employee.model.EmployeeListModel;
+
+import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class EmployeeListAdapter extends RecyclerView.Adapter<EmployeeListAdapter.MyViewHolder> {
+    ArrayList<EmployeeListModel>itemList=new ArrayList();
+    Context context;
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View itemView= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.emp_list_raw,viewGroup,false);
+        return new MyViewHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
+
+      myViewHolder.tvEmpName.setText(itemList.get(i).getEmpName());
+      myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent=new Intent(context, TrackMapActivity.class);
+              intent.putExtra("trackid",itemList.get(i).getEmpId());
+              intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|FLAG_ACTIVITY_NEW_TASK);
+              Log.d("trackid",itemList.get(i).getEmpId());
+              context.startActivity(intent);
+
+          }
+      });
+    }
+
+    @Override
+    public int getItemCount() {
+        return itemList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView tvEmpName;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            tvEmpName=(TextView)itemView.findViewById(R.id.tvEmpName);
+
+        }
+    }
+
+    public EmployeeListAdapter(ArrayList<EmployeeListModel> itemList, Context context) {
+        this.itemList = itemList;
+        this.context = context;
+    }
+}

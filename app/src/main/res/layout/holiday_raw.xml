@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="0.2"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="25 \nDec"
+                android:textAlignment="center"
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/dcolor"></TextView>
+            <TextView
+                android:layout_gravity="center"
+                android:maxLength="3"
+                android:layout_marginTop="4dp"
+                android:text="Monday"
+                android:textAlignment="center"
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/textcolor"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/bar1"></LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@drawable/lldesign10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@color/dot_dark_screen1"></ImageView>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:background="@color/bar1"></LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llItem"
+            android:backgroundTint="@color/textcolor"
+            android:background="@drawable/lldesign"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp">
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"></TextView>
+            <FrameLayout
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:tint="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/circle"></ImageView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
