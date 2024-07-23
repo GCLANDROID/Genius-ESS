@@ -96,7 +96,7 @@ public class SplashScreenActivity extends AppCompatActivity implements GoogleApi
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if ( !pref.getLogOutFlag().equals("1")) {
+                if ( pref.getLogOutFlag().equals("1")) {
                     pref.saveIntentFlag("dashboard");
                     pref.saveVersionHitFlag("2");
                     pref.saveLoginFlag("2");
@@ -286,7 +286,7 @@ public class SplashScreenActivity extends AppCompatActivity implements GoogleApi
 
     private void elsepart() {
         pref.saveIntentFlag("login");
-        startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+        startActivity(new Intent(SplashScreenActivity.this, EDashBoardActivity.class));
         customType(SplashScreenActivity.this, "left-to-right");
         finish();
     }

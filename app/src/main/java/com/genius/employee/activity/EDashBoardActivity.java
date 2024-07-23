@@ -151,7 +151,7 @@ public class EDashBoardActivity extends AppCompatActivity {
     TextView tvsEmpName;
     CircleImageView imgUser;
     ImageView imgVoice;
-    LinearLayout llLeaveApplication,llESSWeb;
+    LinearLayout llLeaveApplication,llESSWeb,llInsurance;
     String cuDate;
     int co;
     String formattedDate;
@@ -231,6 +231,7 @@ public class EDashBoardActivity extends AppCompatActivity {
         llAttendance = (LinearLayout) findViewById(R.id.llAttendance);
         llLeaveApplication = (LinearLayout) findViewById(R.id.llLeaveApplication);
         llESSWeb=(LinearLayout)findViewById(R.id.llESSWeb);
+        llInsurance=(LinearLayout)findViewById(R.id.llInsurance);
         llPayroll = (LinearLayout) findViewById(R.id.llPayroll);
         tvName = (TextView) findViewById(R.id.tvName);
         tvsEmpName = (TextView) findViewById(R.id.tvsEmpName);
@@ -364,6 +365,14 @@ public class EDashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dlMain.openDrawer(Gravity.LEFT);
+            }
+        });
+        llInsurance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EDashBoardActivity.this, InsuranceActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 

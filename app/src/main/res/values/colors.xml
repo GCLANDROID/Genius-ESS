@@ -29,4 +29,6 @@
     <color name="rejected">#E40303</color>
     <color name="pending">#FFC800</color>
     <color name="black">#000000</color>
+
+    <color name="cardback">#FFF9E4</color>
 </resources>

@@ -4,8 +4,12 @@ public class APi {
     public static String sUrl="https://cloud.geniusconsultant.com/GeniusESS/API/";
     public static double lattitude=0.0;
     public static double longitude=0.0;
-    public static String baseurl="http://171.16.1.23/GeniusESSMobile/DEM/api/v2/";
-    public static String baseurl2="http://171.16.1.23/GeniusESSMobile/api/v2/";
+    //http://171.16.1.23/
+    public static String localurl="http://171.16.1.23/";
+    public static String baselocalurl=localurl+"GeniusESSMobile/api/v2/";
+    public static String url="https://cloud.geniusconsultant.com/";
+    public static String baseurl=url+"GeniusESS/DEM/api/v2/";
+    public static String baseurl2=url+"GeniusESS/api/v2/";
     public static String sLoginApi=baseurl+"token";
     public static String sAddDeviceDetailsApi=baseurl2+"DEMNotification/AddDeviceDetails?";
     public static String sGetLastWorkingDayApi=baseurl2+"Utility/GetLastWorkingDay?";
@@ -50,5 +54,7 @@ public class APi {
     public static String sSrAppLetterGetSrLetterApi=baseurl2+"SrAppLetter/GetSrLetter?";
     public static String sBulkAppLetterSaveDocReceivedApi=baseurl2+"BulkAppLetter/SaveDocReceived";
     public static String sSrAppLetterSaveDocReceivedApi=baseurl2+"SrAppLetter/SaveDocReceived";
+    public static String shealthcardApi=baseurl2+"ManageEmployee/healthcard?";
+    public static String insurancedocurl="https://dem.geniusconsultant.com/GeniusEAM";
 
 }
