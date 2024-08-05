@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class InsuranceActivity extends AppCompatActivity {
     CircleImage circleImage;
-    TextView tvName, tvDOB, tvGender, tvSum, tvUHID, tvHealthCard, tvHospitalList, tvHCardManual, tvPolicyBenefit, tvHospitalManual, tvDeHospital, tvClaimForm,tvPolicy,tvInsurance;
+    TextView tvName, tvDOB, tvGender, tvSum, tvUHID, tvHealthCard, tvHospitalList, tvHCardManual, tvPolicyBenefit, tvHospitalManual, tvDeHospital, tvClaimForm,tvPolicy,tvInsurance,tvAge;
     Pref pref;
     int MY_SOCKET_TIMEOUT_MS = 60000;
     String CardManualDoc,HospitalNetworkDoc,PolicyBenefitDoc,DeListedHospitalsDoc,ClaimFormDoc,CardLink,HospitalsNetworkLink;
@@ -61,6 +61,7 @@ public class InsuranceActivity extends AppCompatActivity {
         tvName = (TextView) findViewById(R.id.tvName);
         tvPolicy=(TextView)findViewById(R.id.tvPolicy);
         tvInsurance=(TextView)findViewById(R.id.tvInsurance);
+        tvAge=(TextView)findViewById(R.id.tvAge);
 
         tvHealthCard = (TextView) findViewById(R.id.tvHealthCard);
         tvHospitalList = (TextView) findViewById(R.id.tvHospitalList);
@@ -190,6 +191,8 @@ public class InsuranceActivity extends AppCompatActivity {
                                 tvSum.setText(SUM_INSURED);
                                 String InsuranceProvider = responseData.optString("InsuranceProvider");
                                 tvInsurance.setText(InsuranceProvider);
+                                String Age = responseData.optString("Age");
+                                tvAge.setText(Age);
 
                                 CardManualDoc = APi.insurancedocurl + responseData.optString("CardManualDoc");
                                 HospitalNetworkDoc = APi.insurancedocurl + responseData.optString("HospitalNetworkDoc");

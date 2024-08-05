@@ -145,16 +145,16 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.4"
-                                android:text="Policy No."
+                                android:text="Policy No:"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:id="@+id/tvPolicy"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_marginTop="8dp"
@@ -164,16 +164,16 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.4"
-                                android:text="UHID No."
+                                android:text="UHID No:"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:id="@+id/tvUHID"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_marginTop="8dp"
@@ -183,16 +183,16 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.4"
-                                android:text="Sum Assured"
+                                android:text="Sum Assured:"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:id="@+id/tvSum"
                                 android:textSize="12sp"
-                                android:textColor="@color/color7"></TextView>
+                                android:textColor="@color/dcolor"></TextView>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -206,16 +206,32 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="0.4"
-                                    android:text="DOB"
+                                    android:text="DOB:"
                                     android:textSize="12sp"
-                                    android:textColor="@color/color7"></TextView>
+                                    android:textColor="@color/dcolor"></TextView>
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
+                                    android:layout_weight="0.5"
                                     android:id="@+id/tvDOB"
                                     android:textSize="12sp"
-                                    android:textColor="@color/color7"></TextView>
+                                    android:textColor="@color/dcolor"></TextView>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:text="Age:"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/dcolor"></TextView>
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.4"
+                                    android:id="@+id/tvAge"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/dcolor"></TextView>
+
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_marginTop="8dp"
@@ -227,14 +243,14 @@
                                     android:layout_weight="0.4"
                                     android:text="Gender"
                                     android:textSize="12sp"
-                                    android:textColor="@color/color7"></TextView>
+                                    android:textColor="@color/dcolor"></TextView>
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:id="@+id/tvGender"
                                     android:textSize="12sp"
-                                    android:textColor="@color/color7"></TextView>
+                                    android:textColor="@color/dcolor"></TextView>
                             </LinearLayout>
 
                         </LinearLayout>

@@ -373,7 +373,7 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.show();
         AndroidNetworking.upload(APi.sManageAppointmentSaveDocReceivedApi)
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+                .addMultipartParameter("EmployeeID", pref.getSecureEmpId())
                 .addMultipartParameter("Remarks", remarks)
                 .addMultipartParameter("AcceptenceStatus", "0")
                 .addMultipartFile("SignFile", f)

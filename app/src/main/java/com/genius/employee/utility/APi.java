@@ -5,7 +5,7 @@ public class APi {
     public static double lattitude=0.0;
     public static double longitude=0.0;
     //http://171.16.1.23/
-    public static String localurl="http://171.16.1.23/";
+    public static String localurl="http://171.16.1.147/";
     public static String baselocalurl=localurl+"GeniusESSMobile/api/v2/";
     public static String url="https://cloud.geniusconsultant.com/";
     public static String baseurl=url+"GeniusESS/DEM/api/v2/";

@@ -403,7 +403,7 @@ public class LoginActivity extends AppCompatActivity {
     private void getDetailsOfUser() {
         progressBar.show();
 
-        String surl = APi.sPostLoginApi+"id1="+pref.getSecureEmpId()+"&id2="+etPassword.getText().toString();
+        String surl = APi.sPostLoginApi+"id1="+pref.getSecureEmpId();
         Log.d("reporturl", surl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
                 new Response.Listener<String>() {
