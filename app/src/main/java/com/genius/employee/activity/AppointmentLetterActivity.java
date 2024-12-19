@@ -136,7 +136,7 @@ public class AppointmentLetterActivity extends AppCompatActivity {
                             String responseCode = job1.optString("responseCode");
 
                             if (responseCode.equals("1")) {
-                                text_view.setText("Your Appointment Letter is Ready to Accept");
+                                text_view.setText("");
                                 btnAccept.setVisibility(View.VISIBLE);
                                 btnDownlaod.setVisibility(View.GONE);
                                 appointmentLetterget();

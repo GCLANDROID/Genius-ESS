@@ -2670,7 +2670,7 @@ Receiving Emails from Public Domains \n•	Evaluation: The organization will eva
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="10sp"
+                            android:textSize="14sp"
                             android:textColor="@android:color/black"
                             android:text="I hereby acknowledge that I have read, understand and agree to all the terms and conditions of the System Data Security policy"></TextView>
                     </LinearLayout>
