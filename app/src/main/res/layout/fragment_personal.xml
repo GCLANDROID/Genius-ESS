@@ -12,15 +12,10 @@
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         >
-        <com.jackandphantom.circularimageview.CircleImage
+        <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/user"
-            app:border_width="1dp"
-            app:border_color="#ed2e2e"
-            app:add_shadow="true"
-            app:shadow_color="#a10909"
-            app:shadow_radius="0"
             android:id="@+id/circleImage"
             android:layout_gravity="center"/>
         <LinearLayout

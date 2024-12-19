@@ -76,7 +76,7 @@ import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.OnFailureListener;
 import com.google.android.play.core.tasks.Task;
 
-import com.jackandphantom.circularimageview.CircleImage;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -149,7 +149,7 @@ public class EDashBoardActivity extends AppCompatActivity {
     boolean mslideState;
     ImageView imgMenu, imglogout;
     TextView tvsEmpName;
-    CircleImageView imgUser;
+    ImageView imgUser;
     ImageView imgVoice;
     LinearLayout llLeaveApplication,llESSWeb,llInsurance;
     String cuDate;
@@ -212,7 +212,7 @@ public class EDashBoardActivity extends AppCompatActivity {
         pref = new Pref(getApplicationContext());
         imgVoice=(ImageView)findViewById(R.id.imgVoice);
         fbQR = (FloatingActionButton) findViewById(R.id.fbQR);
-        imgUser = (CircleImageView) findViewById(R.id.imgUser);
+        imgUser = (ImageView) findViewById(R.id.imgUser);
         try {
             byte[] decodedString = Base64.decode(pref.getProfileImage(), Base64.DEFAULT);
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);

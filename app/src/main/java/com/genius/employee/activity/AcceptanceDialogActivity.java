@@ -94,6 +94,8 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
     String companyName;
     int version;
     PDFView pdfView;
+    LinearLayout llPDF,llPDFBottom,llSecuritySOP;
+    CheckBox sopchek_box;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +131,11 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
         btnAccept.setEnabled(false);
         chek_box=(CheckBox) findViewById(R.id.chek_box);
         btnReject=(Button)findViewById(R.id.btnReject);
+        sopchek_box=(CheckBox) findViewById(R.id.sopchek_box);
 
+        llPDF=(LinearLayout) findViewById(R.id.llPDF);
+        llPDFBottom=(LinearLayout) findViewById(R.id.llPDFBottom);
+        llSecuritySOP=(LinearLayout) findViewById(R.id.llSecuritySOP);
 
 
     }
@@ -138,7 +144,9 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
         btnAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              signatureAlert();
+              llPDF.setVisibility(View.GONE);
+              llPDFBottom.setVisibility(View.GONE);
+              llSecuritySOP.setVisibility(View.VISIBLE);
             }
         });
 
@@ -157,6 +165,18 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rejectioneAlert();
+            }
+        });
+
+        sopchek_box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    signatureAlert();
+
+                } else {
+
+                }
             }
         });
     }

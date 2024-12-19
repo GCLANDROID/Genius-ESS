@@ -24,7 +24,7 @@ import com.genius.employee.R;
 import com.genius.employee.utility.APi;
 import com.genius.employee.utility.AppController;
 import com.genius.employee.utility.Pref;
-import com.jackandphantom.circularimageview.CircleImage;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InsuranceActivity extends AppCompatActivity {
-    CircleImage circleImage;
+    ImageView circleImage;
     TextView tvName, tvDOB, tvGender, tvSum, tvUHID, tvHealthCard, tvHospitalList, tvHCardManual, tvPolicyBenefit, tvHospitalManual, tvDeHospital, tvClaimForm,tvPolicy,tvInsurance,tvAge;
     Pref pref;
     int MY_SOCKET_TIMEOUT_MS = 60000;
@@ -53,7 +53,7 @@ public class InsuranceActivity extends AppCompatActivity {
         pref = new Pref(InsuranceActivity.this);
         imgHome=(ImageView)findViewById(R.id.imgHome);
         imgBack=(ImageView)findViewById(R.id.imgBack);
-        circleImage = (CircleImage) findViewById(R.id.circleImage);
+        circleImage = (ImageView) findViewById(R.id.circleImage);
         tvUHID = (TextView) findViewById(R.id.tvUHID);
         tvSum = (TextView) findViewById(R.id.tvSum);
         tvGender = (TextView) findViewById(R.id.tvGender);

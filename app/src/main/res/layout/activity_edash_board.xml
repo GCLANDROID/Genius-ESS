@@ -164,17 +164,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center">
-                            <com.jackandphantom.circularimageview.CircleImage
+                            <ImageView
                                 android:id="@+id/circleImage"
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
 
-                                app:add_shadow="true"
-                                android:visibility="visible"
-                                app:border_color="#d7d7d7"
-                                app:border_width="3dp"
-                                app:shadow_color="#afaeae"
-                                app:shadow_radius="0"
                                 />
                         </LinearLayout>
                     </FrameLayout>

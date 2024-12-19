@@ -365,7 +365,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                      wrkFrm="0";
                  }else if (mode.equalsIgnoreCase("Home")){
                      wrkFrm="1";
-                     getAddressSavedOrNot();
+                    // getAddressSavedOrNot();
                  }else if (mode.equalsIgnoreCase("Client")){
                      wrkFrm="2";
                  }else if (mode.equalsIgnoreCase("Vendor")){

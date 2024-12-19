@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.genius.employee.R;
 import com.genius.employee.activity.ProfileActivity;
 import com.genius.employee.utility.Pref;
-import com.jackandphantom.circularimageview.CircleImage;
+
 
 import java.io.ByteArrayOutputStream;
 
@@ -31,7 +31,7 @@ public class PersonalFragment extends Fragment {
     View view;
     TextView tvDOB,tvMartial,tvgender,tvBlood,tvGurdian,tvRelationship,tvIndentification;
     Pref pref;
-    CircleImage imgProfile;
+    ImageView imgProfile;
     Button btnNext,btnPrevious;
 
     @Override
@@ -68,7 +68,7 @@ public class PersonalFragment extends Fragment {
         tvIndentification=(TextView)view.findViewById(R.id.tvIndentification);
         tvIndentification.setText(pref.getEmpId());
 
-        imgProfile=(CircleImage) view.findViewById(R.id.circleImage);
+        imgProfile=(ImageView) view.findViewById(R.id.circleImage);
 
         String profileimage=pref.getProfileImage();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

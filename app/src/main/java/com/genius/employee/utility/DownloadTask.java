@@ -30,7 +30,7 @@ public class DownloadTask {
         this.downloadUrl = downloadUrl;
 
 
-        downloadFileName = "/Genius-AppointLetter.pdf";//Create file name by picking download file name from URL
+        downloadFileName = "/GeniusAppointLetter.pdf";//Create file name by picking download file name from URL
         Log.e(TAG, downloadFileName);
 
         //Start Downloading Task

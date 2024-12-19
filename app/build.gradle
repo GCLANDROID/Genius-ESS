@@ -6,8 +6,8 @@ android {
         applicationId "com.genius.employee"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 72
-        versionName "8.2"//7.5
+        versionCode 95
+        versionName "8.3"//7.5
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         packagingOptions {
@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.squareup.okio:okio:1.7.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:28.0.0-rc01'
-    implementation 'com.jackandphantom.android:circularimageview:1.2.0'
+
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:28.0.0-rc01'
     //noinspection GradleCompatible
