@@ -100,11 +100,14 @@ public class OnlineAttendanceReportFragment extends Fragment {
         spYear=(Spinner)view.findViewById(R.id.spYear);
         spMonth=(Spinner)view.findViewById(R.id.spMonth);
 
-        yearList.add("2020");
-        yearList.add("2021");
+
+
         yearList.add("2022");
         yearList.add("2023");
         yearList.add("2024");
+        yearList.add("2025");
+        yearList.add("2026");
+        yearList.add("2027");
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (getContext(), android.R.layout.simple_spinner_item,
                         yearList); //selected item will look like a spinner set from XML

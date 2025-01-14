@@ -505,12 +505,12 @@ public class WFHTeamReportActivity extends AppCompatActivity {
     private void setYearItem() {
         int year = Calendar.getInstance().get(Calendar.YEAR);
         String y= String.valueOf(year);
-        yearList.add("2020");
-        yearList.add("2021");
-        yearList.add("2022");
+
         yearList.add("2023");
         yearList.add("2024");
         yearList.add("2025");
+        yearList.add("2026");
+        yearList.add("2027");
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (WFHTeamReportActivity.this, android.R.layout.simple_spinner_item,
                         yearList); //selected item will look like a spinner set from XML
