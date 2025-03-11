@@ -2,6 +2,7 @@ package com.genius.employee.utility;
 
 public class APi {
     public static String sUrl="https://cloud.geniusconsultant.com/GeniusESS/API/";
+    public static String localsUrl="http://171.16.1.150/GeniusESSMobile/api/";
     public static double lattitude=0.0;
     public static double longitude=0.0;
     //http://171.16.1.23/
@@ -56,5 +57,8 @@ public class APi {
     public static String sSrAppLetterSaveDocReceivedApi=baseurl2+"SrAppLetter/SaveDocReceived";
     public static String shealthcardApi=baseurl2+"ManageEmployee/healthcard?";
     public static String insurancedocurl="https://dem.geniusconsultant.com/GeniusEAM";
+    public static String srelationApi=localsUrl+"employee/relation?";
+    public static String sfamilyAddupdateApi=localsUrl+"employee/family";
+    public static String sdelfamilyApi=localsUrl+"employee/del-family?";
 
 }

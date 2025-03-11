@@ -716,6 +716,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                             pref.saveAccessToken(access_token);
                             pref.saveSecureEmpId(SecurID);
                             getDetailsOfUser();
+                            getLoginTime();
                             // saveDeviceID(); 404 error
 
 
@@ -2204,6 +2205,6 @@ public class EDashBoardActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getLoginTime();
+        //getLoginTime();
     }
 }

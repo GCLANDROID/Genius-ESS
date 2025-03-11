@@ -101,7 +101,7 @@ public class WFHAddressDetailsActivity extends AppCompatActivity {
     }
 
     private void getAddressSavedOrNot() {
-        String surl = "http://171.16.1.23/GeniusESSMobile/api/WFHAddress/getaddress?EmployeeID=" + empID;
+        String surl = "http://171.16.1.150/GeniusESSMobile/api/WFHAddress/getaddress?EmployeeID=" + empID;
         // String surl = "http://172.16.1.184/GeniusESSMobile/API/Utility/GetLocationKey";
         Log.d("residancelist", surl);
         final ProgressDialog progressDialog = new ProgressDialog(WFHAddressDetailsActivity.this);
@@ -253,7 +253,7 @@ public class WFHAddressDetailsActivity extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(WFHAddressDetailsActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
-        AndroidNetworking.upload("http://171.16.1.23/GeniusESSMobile/api/WFHAddress/approveaddress")
+        AndroidNetworking.upload("http://171.16.1.150/GeniusESSMobile/api/WFHAddress/approveaddress")
                 .addMultipartParameter("EmployeeID", empID)
                 .addMultipartParameter("AddressType", AddressType)
                 .addMultipartParameter("ApprovedBy", pref.getEmpId())

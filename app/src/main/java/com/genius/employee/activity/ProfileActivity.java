@@ -33,6 +33,7 @@ import com.genius.employee.fragment.MisFragment;
 import com.genius.employee.fragment.OfficialFragment;
 import com.genius.employee.fragment.PersonalFragment;
 import com.genius.employee.model.LeaveModel;
+import com.genius.employee.model.SpinnerModel;
 import com.genius.employee.utility.APi;
 import com.genius.employee.utility.AppController;
 import com.genius.employee.utility.NetworkConnectionCheck;
@@ -43,6 +44,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -65,6 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView imgMis;
     TextView tvMis;
     LinearLayout llMis;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

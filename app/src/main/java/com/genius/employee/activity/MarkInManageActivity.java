@@ -365,7 +365,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                      wrkFrm="0";
                  }else if (mode.equalsIgnoreCase("Home")){
                      wrkFrm="1";
-                    // getAddressSavedOrNot();
+                     getAddressSavedOrNot();
                  }else if (mode.equalsIgnoreCase("Client")){
                      wrkFrm="2";
                  }else if (mode.equalsIgnoreCase("Vendor")){
@@ -403,7 +403,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                 }
             }
         });
-        /*btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (flag == 1) {
@@ -429,10 +429,10 @@ public class MarkInManageActivity extends AppCompatActivity {
             }
 
 
-        });*/
+        });
 
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+     /*   btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (flag == 1) {
@@ -451,7 +451,7 @@ public class MarkInManageActivity extends AppCompatActivity {
             }
 
 
-        });
+        });*/
 
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -945,7 +945,7 @@ public class MarkInManageActivity extends AppCompatActivity {
 
 
     private void getAddressSavedOrNot() {
-        String surl = "http://171.16.1.23/GeniusESSMobile/api/WFHAddress/getaddress?EmployeeID="+pref.getEmpId();
+        String surl = "http://171.16.1.150/GeniusESSMobile/api/WFHAddress/getaddress?EmployeeID=2070003154"/*+pref.getEmpId()*/;
         // String surl = "http://172.16.1.184/GeniusESSMobile/API/Utility/GetLocationKey";
         Log.d("residancelist", surl);
         final ProgressDialog progressDialog = new ProgressDialog(MarkInManageActivity.this);
@@ -1248,8 +1248,8 @@ public class MarkInManageActivity extends AppCompatActivity {
         final ProgressDialog progressDialog=new ProgressDialog(MarkInManageActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
-        AndroidNetworking.upload("http://171.16.1.23/GeniusESSMobile/api/WFHAddress/saveaddress")
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+        AndroidNetworking.upload("http://171.16.1.150/GeniusESSMobile/api/WFHAddress/saveaddress")
+                .addMultipartParameter("EmployeeID", "2070003154")
                 .addMultipartParameter("Latitude", currentlat)
                 .addMultipartParameter("Longitude", currentlong)
                 .addMultipartParameter("AddressType", code)
@@ -1309,8 +1309,8 @@ public class MarkInManageActivity extends AppCompatActivity {
         final ProgressDialog progressDialog=new ProgressDialog(MarkInManageActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
-        AndroidNetworking.upload("http://171.16.1.23/GeniusESSMobile/api/WFHAddress/checkdistance")
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+        AndroidNetworking.upload("http://171.16.1.150/GeniusESSMobile/api/WFHAddress/checkdistance")
+                .addMultipartParameter("EmployeeID", "2070003154")
                 .addMultipartParameter("Latitude", currentlat)
                 .addMultipartParameter("Longitude", currentlong)
                 .setTag("uploadTest")
