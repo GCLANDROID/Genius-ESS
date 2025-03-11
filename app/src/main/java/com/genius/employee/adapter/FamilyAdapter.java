@@ -63,7 +63,7 @@ public class FamilyAdapter extends  RecyclerView.Adapter<FamilyAdapter.MyViewHol
             }
         });
 
-       myViewHolder.tvmemberCount.setText(familyList.get(i).getCount()+". Member : "+familyList.get(i).getRealation()+" >");
+       myViewHolder.tvmemberCount.setText(familyList.get(i).getCount()+". "+familyList.get(i).getRealation());
 
     }
 

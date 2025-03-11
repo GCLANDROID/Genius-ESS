@@ -60,5 +60,8 @@ public class APi {
     public static String srelationApi=localsUrl+"employee/relation?";
     public static String sfamilyAddupdateApi=localsUrl+"employee/family";
     public static String sdelfamilyApi=localsUrl+"employee/del-family?";
+    public static String squalificationApi=localsUrl+"employee/qualification?";
+    public static String seducationAddupdateApi=localsUrl+"employee/education";
+    public static String sdeleducationApi=localsUrl+"employee/del-education?";
 
 }
