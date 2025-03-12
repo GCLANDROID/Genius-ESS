@@ -1,7 +1,5 @@
 package com.genius.employee.activity;
 
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,11 +27,9 @@ import com.genius.employee.R;
 import com.genius.employee.fragment.ContactFragment;
 import com.genius.employee.fragment.EducationFragment;
 import com.genius.employee.fragment.FamilyFragment;
-import com.genius.employee.fragment.MisFragment;
+import com.genius.employee.fragment.ExperienceFragment;
 import com.genius.employee.fragment.OfficialFragment;
 import com.genius.employee.fragment.PersonalFragment;
-import com.genius.employee.model.LeaveModel;
-import com.genius.employee.model.SpinnerModel;
 import com.genius.employee.utility.APi;
 import com.genius.employee.utility.AppController;
 import com.genius.employee.utility.NetworkConnectionCheck;
@@ -44,8 +40,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,7 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvToolBar;
     ImageView imgMis;
     TextView tvMis;
-    LinearLayout llMis;
+    LinearLayout llExp;
 
 
     @Override
@@ -90,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
         llContact = (LinearLayout) findViewById(R.id.llContact);
         llFamily = (LinearLayout) findViewById(R.id.llFamily);
         llEducation = (LinearLayout) findViewById(R.id.llEducation);
-        llMis = (LinearLayout) findViewById(R.id.llMis);
+        llExp = (LinearLayout) findViewById(R.id.llExp);
 
         imgOfficial = (ImageView) findViewById(R.id.imgOfficial);
         imgPersonal = (ImageView) findViewById(R.id.imgPersonal);
@@ -160,7 +154,7 @@ public class ProfileActivity extends AppCompatActivity {
                 loadEducationFragment();
             }
         });
-        llMis.setOnClickListener(new View.OnClickListener() {
+        llExp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loadMisFragment();
@@ -182,7 +176,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgFamily.setImageResource(R.drawable.family1);
         imgEducation.setImageResource(R.drawable.education1);
         imgEducation.setImageResource(R.drawable.education1);
-        imgMis.setImageResource(R.drawable.ic_charity);
+        imgMis.setImageResource(R.drawable.portfolio);
 
         tvOfficial.setTextColor(Color.parseColor("#085A96"));
         tvPersonal.setTextColor(Color.parseColor("#30B3A3"));
@@ -211,7 +205,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgContact.setImageResource(R.drawable.contact1);
         imgFamily.setImageResource(R.drawable.family1);
         imgEducation.setImageResource(R.drawable.education1);
-        imgMis.setImageResource(R.drawable.ic_charity);
+        imgMis.setImageResource(R.drawable.portfolio);
 
         tvPersonal.setTextColor(Color.parseColor("#085A96"));
         tvOfficial.setTextColor(Color.parseColor("#30B3A3"));
@@ -239,7 +233,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgContact.setImageResource(R.drawable.contact);
         imgFamily.setImageResource(R.drawable.family1);
         imgEducation.setImageResource(R.drawable.education1);
-        imgMis.setImageResource(R.drawable.ic_charity);
+        imgMis.setImageResource(R.drawable.portfolio);
 
         tvContact.setTextColor(Color.parseColor("#085A96"));
         tvPersonal.setTextColor(Color.parseColor("#30B3A3"));
@@ -265,7 +259,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgContact.setImageResource(R.drawable.contact1);
         imgFamily.setImageResource(R.drawable.family);
         imgEducation.setImageResource(R.drawable.education1);
-        imgMis.setImageResource(R.drawable.ic_charity);
+        imgMis.setImageResource(R.drawable.portfolio);
 
 
         tvFamily.setTextColor(Color.parseColor("#085A96"));
@@ -293,6 +287,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgContact.setImageResource(R.drawable.contact1);
         imgFamily.setImageResource(R.drawable.family1);
         imgEducation.setImageResource(R.drawable.education);
+        imgMis.setImageResource(R.drawable.portfolio);
         tvEducation.setTextColor(Color.parseColor("#30B3A3"));
 
         tvEducation.setTextColor(Color.parseColor("#085A96"));
@@ -311,7 +306,7 @@ public class ProfileActivity extends AppCompatActivity {
         flag = 1;
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        MisFragment efragment = new MisFragment();
+        ExperienceFragment efragment = new ExperienceFragment();
         transaction.replace(R.id.frameLayout, efragment);
         transaction.commit();
         imgOfficial.setImageResource(R.drawable.official1);
@@ -319,7 +314,7 @@ public class ProfileActivity extends AppCompatActivity {
         imgContact.setImageResource(R.drawable.contact1);
         imgFamily.setImageResource(R.drawable.family1);
         imgEducation.setImageResource(R.drawable.education1);
-        imgMis.setImageResource(R.drawable.ic_charity1);
+        imgMis.setImageResource(R.drawable.portfolione);
 
 
         tvEducation.setTextColor(Color.parseColor("#30B3A3"));
@@ -329,7 +324,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvFamily.setTextColor(Color.parseColor("#30B3A3"));
         tvMis.setTextColor(Color.parseColor("#085A96"));
 
-        tvToolBar.setText("Miscellaneous");
+        tvToolBar.setText("Experience");
         //tvHeader.setText("Education");
     }
 

@@ -63,5 +63,7 @@ public class APi {
     public static String squalificationApi=localsUrl+"employee/qualification?";
     public static String seducationAddupdateApi=localsUrl+"employee/education";
     public static String sdeleducationApi=localsUrl+"employee/del-education?";
-
+    public static String sexperienceApi=localsUrl+"employee/experience/";
+    public static String sexperienceAddApi=localsUrl+"employee/experience";
+    public static String sdelexperienceApi=localsUrl+"employee/del-experience?";
 }
