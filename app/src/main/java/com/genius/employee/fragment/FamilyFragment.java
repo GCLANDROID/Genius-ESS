@@ -481,11 +481,12 @@ public class FamilyFragment extends Fragment {
         pd.setCancelable(false);
         pd.show();
         AndroidNetworking.upload(APi.sfamilyAddupdateApi)
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+                .addMultipartParameter("EmployeeID", pref.getSecureEmpId())
                 .addMultipartParameter("MemberID", memberID)
                 .addMultipartParameter("Name", memberName)
                 .addMultipartParameter("Occupation", occupation)
                 .addMultipartParameter("Depandent", String.valueOf(dependent))
+                .addHeaders("Authorization","Bearer "+pref.getAccessToken())
                 //.addHeaders("Content-Type: application/x-www-form-urlencoded")
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)
@@ -540,7 +541,7 @@ public class FamilyFragment extends Fragment {
 
 
     private void deleteMemeber(int memberID) {
-        String surl = APi.sdelfamilyApi + "EmployeeID=" + pref.getEmpId() + "&MemberID=" + memberID;
+        String surl = APi.sdelfamilyApi + "EmployeeID=" + pref.getSecureEmpId() + "&MemberID=" + memberID;
         ProgressDialog dialog = new ProgressDialog(getContext());
         dialog.setMessage("Loading");
         dialog.setCancelable(false);

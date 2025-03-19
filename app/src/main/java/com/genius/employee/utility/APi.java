@@ -57,13 +57,13 @@ public class APi {
     public static String sSrAppLetterSaveDocReceivedApi=baseurl2+"SrAppLetter/SaveDocReceived";
     public static String shealthcardApi=baseurl2+"ManageEmployee/healthcard?";
     public static String insurancedocurl="https://dem.geniusconsultant.com/GeniusEAM";
-    public static String srelationApi=localsUrl+"employee/relation?";
-    public static String sfamilyAddupdateApi=localsUrl+"employee/family";
-    public static String sdelfamilyApi=localsUrl+"employee/del-family?";
-    public static String squalificationApi=localsUrl+"employee/qualification?";
-    public static String seducationAddupdateApi=localsUrl+"employee/education";
-    public static String sdeleducationApi=localsUrl+"employee/del-education?";
-    public static String sexperienceApi=localsUrl+"employee/experience/";
-    public static String sexperienceAddApi=localsUrl+"employee/experience";
-    public static String sdelexperienceApi=localsUrl+"employee/del-experience?";
+    public static String srelationApi=baseurl2+"employee/relation?";
+    public static String sfamilyAddupdateApi=baseurl2+"employee/family";
+    public static String sdelfamilyApi=baseurl2+"employee/del-family?";
+    public static String squalificationApi=baseurl2+"employee/qualification?";
+    public static String seducationAddupdateApi=baseurl2+"employee/education";
+    public static String sdeleducationApi=baseurl2+"employee/del-education?";
+    public static String sexperienceApi=baseurl2+"employee/experience?";
+    public static String sexperienceAddApi=baseurl2+"employee/experience";
+    public static String sdelexperienceApi=baseurl2+"employee/del-experience?";
 }

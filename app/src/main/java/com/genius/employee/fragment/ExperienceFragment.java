@@ -107,7 +107,7 @@ public class ExperienceFragment extends Fragment {
     }
 
     private void getProfile() {
-        String surl = APi.sexperienceApi + pref.getEmpId();
+        String surl = APi.sexperienceApi+"id=" + pref.getSecureEmpId();
         Log.d("manageinput", surl);
         llLoader.setVisibility(View.VISIBLE);
         llMain.setVisibility(View.GONE);
@@ -367,13 +367,14 @@ public class ExperienceFragment extends Fragment {
         pd.setCancelable(false);
         pd.show();
         AndroidNetworking.upload(APi.sexperienceAddApi)
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+                .addMultipartParameter("EmployeeID", pref.getSecureEmpId())
                 .addMultipartParameter("fromDate", fromDate)
                 .addMultipartParameter("toDate", toDate)
                 .addMultipartParameter("organisationName", organisationName)
                 .addMultipartParameter("designation", designation)
                 .addMultipartParameter("location", location)
                 .addMultipartParameter("jobRId", jobRId)
+                .addHeaders("Authorization","Bearer "+pref.getAccessToken())
                 //.addHeaders("Content-Type: application/x-www-form-urlencoded")
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)
@@ -429,7 +430,7 @@ public class ExperienceFragment extends Fragment {
 
 
     private void deleteExp(String memberID) {
-        String surl = APi.sdelexperienceApi + "EmployeeID=" + pref.getEmpId() + "&jobRId=" + memberID;
+        String surl = APi.sdelexperienceApi + "EmployeeID=" + pref.getSecureEmpId() + "&jobRId=" + memberID;
         ProgressDialog dialog = new ProgressDialog(getContext());
         dialog.setMessage("Loading");
         dialog.setCancelable(false);

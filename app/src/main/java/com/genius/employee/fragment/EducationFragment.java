@@ -473,12 +473,13 @@ public class EducationFragment extends Fragment {
         pd.setCancelable(false);
         pd.show();
         AndroidNetworking.upload(APi.seducationAddupdateApi)
-                .addMultipartParameter("EmployeeID", pref.getEmpId())
+                .addMultipartParameter("EmployeeID", pref.getSecureEmpId())
                 .addMultipartParameter("qualificationId", qualificationId)
                 .addMultipartParameter("specification", specification)
                 .addMultipartParameter("institute", institute)
                 .addMultipartParameter("marks", marks)
                 .addMultipartParameter("passingYear", passingYear)
+                .addHeaders("Authorization","Bearer "+pref.getAccessToken())
                 //.addHeaders("Content-Type: application/x-www-form-urlencoded")
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)
@@ -534,7 +535,7 @@ public class EducationFragment extends Fragment {
 
 
     private void deleteEdu(int id) {
-        String surl = APi.sdeleducationApi + "EmployeeID=" + pref.getEmpId() + "&qualificationId=" + id;
+        String surl = APi.sdeleducationApi + "EmployeeID=" + pref.getSecureEmpId() + "&qualificationId=" + id;
         ProgressDialog dialog = new ProgressDialog(getContext());
         dialog.setMessage("Loading");
         dialog.setCancelable(false);
