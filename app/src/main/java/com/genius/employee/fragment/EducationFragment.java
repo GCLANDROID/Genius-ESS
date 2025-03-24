@@ -4,6 +4,7 @@ package com.genius.employee.fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 /*import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -79,6 +80,10 @@ public class EducationFragment extends Fragment {
     ArrayList<String>eduList=new ArrayList<>();
     ArrayList<SpinnerModel>modelEduList=new ArrayList<>();
     LinearLayout llAddNew;
+    ArrayList<String>qualificationList=new ArrayList<>();
+
+    ArrayList<String>editeduList=new ArrayList<>();
+    ArrayList<SpinnerModel>editmodelEduList=new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,7 +92,7 @@ public class EducationFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_education, container, false);
         initialize();
         getProfile();
-        getEduType();
+
         onClick();
         return v;
     }
@@ -119,7 +124,7 @@ public class EducationFragment extends Fragment {
                     public void onResponse(String response) {
                         Log.d("responseLogin", response);
                         educationList.clear();
-
+                        qualificationList.clear();
 
                         try {
                             JSONObject job1 = new JSONObject(response);
@@ -148,9 +153,13 @@ public class EducationFragment extends Fragment {
                                             fmodel.setCount(b+1);
                                             fmodel.setQualificationID(QualificationID);
                                             educationList.add(fmodel);
+                                            qualificationList.add(QualificationName);
 
 
                                         }
+
+
+                                        getEduType();
 
                                         llLoader.setVisibility(View.GONE);
                                         llMain.setVisibility(View.VISIBLE);
@@ -250,9 +259,9 @@ public class EducationFragment extends Fragment {
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (getContext(), android.R.layout.simple_spinner_item,
-                        eduList); //selected item will look like a spinner set from XML
+                        editeduList); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        int index = eduList.indexOf(educationList.get(pos).getQualification());
+        int index = editeduList.indexOf(educationList.get(pos).getQualification());
 
         spEduType.setAdapter(spinnerArrayAdapter);
         spEduType.setSelection(index);
@@ -260,7 +269,7 @@ public class EducationFragment extends Fragment {
         spEduType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                eduID = modelEduList.get(i).getItemId();
+                eduID = editmodelEduList.get(i).getItemId();
             }
 
             @Override
@@ -401,6 +410,8 @@ public class EducationFragment extends Fragment {
                     public void onResponse(String response) {
                         Log.d("responseRelation", response);
                         dialog.dismiss();
+                        eduList.clear();
+                        modelEduList.clear();
 
                         try {
                             JSONObject job1 = new JSONObject(response);
@@ -420,6 +431,95 @@ public class EducationFragment extends Fragment {
 
 
                                 }
+
+                                getEditEduType();
+
+                                eduList.removeAll(qualificationList);
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                                    modelEduList.removeIf(model -> qualificationList.contains(model.getItemName()));
+                                }
+
+                            } else {
+                                dialog.dismiss();
+
+
+                            }
+
+                            // boolean _status = job1.getBoolean("status");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+                            // Toast.makeText(DocumentReportActivity.this, "Volly Error", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                dialog.dismiss();
+
+
+                //  Toast.makeText(DocumentReportActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
+
+                Log.e("ert", error.toString());
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer " + pref.getAccessToken());
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_SOCKET_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+
+    }
+
+
+    private void getEditEduType() {
+        String surl = APi.squalificationApi;
+        ProgressDialog dialog = new ProgressDialog(getContext());
+        dialog.setMessage("Loading");
+        dialog.setCancelable(false);
+        dialog.show();
+
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("responseRelation", response);
+                        dialog.dismiss();
+                        editeduList.clear();
+                        editmodelEduList.clear();
+
+                        try {
+                            JSONObject job1 = new JSONObject(response);
+                            Log.e("responsedocumentreport", "@@@@@@" + job1);
+                            String responseText = job1.optString("responseText");
+                            boolean responseStatus = job1.optBoolean("responseStatus");
+                            if (responseStatus) {
+                                //    Toast.makeText(getApplicationContext(), responseText, Toast.LENGTH_LONG).show();
+                                JSONArray responseData = job1.optJSONArray("responseData");
+                                for (int i = 0; i < responseData.length(); i++) {
+                                    JSONObject obj = responseData.getJSONObject(i);
+                                    String Qualification = obj.optString("Qualification");
+                                    String ID = obj.optString("ID");
+                                    editeduList.add(Qualification);
+                                    SpinnerModel model = new SpinnerModel(Qualification, ID);
+                                    editmodelEduList.add(model);
+
+
+                                }
+
 
 
                             } else {

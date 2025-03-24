@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 /*import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -61,6 +63,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -82,7 +85,10 @@ public class FamilyFragment extends Fragment {
     ArrayList<SpinnerModel> modelRltnList = new ArrayList<>();
     String memberID = "";
     LinearLayout llAddNew;
+    ArrayList<String>RltnNameList=new ArrayList<>();
 
+    ArrayList<String> editrltnList = new ArrayList<>();
+    ArrayList<SpinnerModel> editmodelRltnList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,7 +97,7 @@ public class FamilyFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_family, container, false);
         initialize();
         getProfile();
-        getMemeberType();
+
         onClick();
         return v;
     }
@@ -124,6 +130,7 @@ public class FamilyFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Log.d("responseLogin", response);
+                        RltnNameList.clear();
 
 
                         try {
@@ -157,6 +164,11 @@ public class FamilyFragment extends Fragment {
                                             fmodel.setMemberID(MemberID);
                                             fmodel.setCount(b + 1);
                                             familyList.add(fmodel);
+                                            if (RltnName.equalsIgnoreCase("Father")||RltnName.equalsIgnoreCase("Mother")||RltnName.equalsIgnoreCase("Spouse")||RltnName.equalsIgnoreCase("Child(1)")||RltnName.equalsIgnoreCase("Child(2)") ) {
+                                                RltnNameList.add(RltnName);
+
+
+                                            }
 
 
                                         }
@@ -174,6 +186,8 @@ public class FamilyFragment extends Fragment {
                                         llMain.setVisibility(View.VISIBLE);
                                         llNoData.setVisibility(View.VISIBLE);
                                     }
+
+                                    getMemeberType();
 
 
                                 }
@@ -238,10 +252,13 @@ public class FamilyFragment extends Fragment {
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
                 new Response.Listener<String>() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
                     public void onResponse(String response) {
                         Log.d("responseRelation", response);
                         dialog.dismiss();
+                        rltnList.clear();
+                        modelRltnList.clear();
 
                         try {
                             JSONObject job1 = new JSONObject(response);
@@ -260,7 +277,105 @@ public class FamilyFragment extends Fragment {
                                     modelRltnList.add(model);
 
 
+
+
                                 }
+
+
+                                Log.d("RltnNameList",RltnNameList.toString());
+
+                                rltnList.removeAll(RltnNameList);
+                                if (RltnNameList.size()>0){
+                                    modelRltnList.removeIf(model -> RltnNameList.contains(model.getItemName()));
+                                }
+
+
+
+                                getMemeberTypeForEdit();
+
+
+                            } else {
+                                dialog.dismiss();
+
+
+                            }
+
+                            // boolean _status = job1.getBoolean("status");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+                            // Toast.makeText(DocumentReportActivity.this, "Volly Error", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                dialog.dismiss();
+
+
+                //  Toast.makeText(DocumentReportActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
+
+                Log.e("ert", error.toString());
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer " + pref.getAccessToken());
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_SOCKET_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+
+    }
+
+    private void getMemeberTypeForEdit() {
+        String surl = APi.srelationApi;
+        ProgressDialog dialog = new ProgressDialog(getContext());
+        dialog.setMessage("Loading");
+        dialog.setCancelable(false);
+        dialog.show();
+
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("responseRelation", response);
+                        dialog.dismiss();
+                        editrltnList.clear();
+                        editmodelRltnList.clear();
+
+                        try {
+                            JSONObject job1 = new JSONObject(response);
+                            Log.e("responsedocumentreport", "@@@@@@" + job1);
+                            String responseText = job1.optString("responseText");
+                            boolean responseStatus = job1.optBoolean("responseStatus");
+                            if (responseStatus) {
+                                //    Toast.makeText(getApplicationContext(), responseText, Toast.LENGTH_LONG).show();
+                                JSONArray responseData = job1.optJSONArray("responseData");
+                                for (int i = 0; i < responseData.length(); i++) {
+                                    JSONObject obj = responseData.getJSONObject(i);
+                                    String Relation = obj.optString("Relation");
+                                    String ID = obj.optString("ID");
+                                    editrltnList.add(Relation);
+                                    SpinnerModel model = new SpinnerModel(Relation, ID);
+                                    editmodelRltnList.add(model);
+
+
+                                }
+
+
+
 
 
                             } else {
@@ -356,10 +471,13 @@ public class FamilyFragment extends Fragment {
         spMemberType.setAdapter(spinnerArrayAdapter);
 
 
+
+
         spMemberType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 memberID = modelRltnList.get(i).getItemId();
+
             }
 
             @Override
@@ -426,9 +544,9 @@ public class FamilyFragment extends Fragment {
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (getContext(), android.R.layout.simple_spinner_item,
-                        rltnList); //selected item will look like a spinner set from XML
+                        editrltnList); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        int index = rltnList.indexOf(familyList.get(pos).getRealation());
+        int index = editrltnList.indexOf(familyList.get(pos).getRealation());
 
         spMemberType.setAdapter(spinnerArrayAdapter);
         spMemberType.setSelection(index);
@@ -436,7 +554,7 @@ public class FamilyFragment extends Fragment {
         spMemberType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                memberID = modelRltnList.get(i).getItemId();
+                memberID = editmodelRltnList.get(i).getItemId();
             }
 
             @Override
