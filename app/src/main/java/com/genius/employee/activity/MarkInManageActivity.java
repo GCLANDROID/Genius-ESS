@@ -172,7 +172,7 @@ public class MarkInManageActivity extends AppCompatActivity {
     private final static int INTERVAL = 1000 * 60 * 2;
     Spinner spWorkFrom;
     ArrayList<String> wrkHomeList = new ArrayList<>();
-    String wrkFrm;
+    String wrkFrm="";
     FrameLayout flImage;
     TextView tvDate, tvInTime, tvOutTime;
     String cuDate;
@@ -195,6 +195,7 @@ public class MarkInManageActivity extends AppCompatActivity {
     private void initview() {
         pref = new Pref(MarkInManageActivity.this);
         if (pref.getBranchId().equals("1100000001")){
+            wrkHomeList.add("Please Select");
             wrkHomeList.add("Home");
             wrkHomeList.add("Client");
             wrkHomeList.add("Vendor");
@@ -360,19 +361,21 @@ public class MarkInManageActivity extends AppCompatActivity {
         spWorkFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                 mode=wrkHomeList.get(i);
-                 if (mode.equalsIgnoreCase("Office")){
-                     wrkFrm="0";
-                 }else if (mode.equalsIgnoreCase("Home")){
-                     wrkFrm="1";
-                     getAddressSavedOrNot();
-                 }else if (mode.equalsIgnoreCase("Client")){
-                     wrkFrm="2";
-                 }else if (mode.equalsIgnoreCase("Vendor")){
-                     wrkFrm="3";
-                 }else if (mode.equalsIgnoreCase("Others")){
-                     wrkFrm="4";
-                 }
+                if (i>0) {
+                    mode = wrkHomeList.get(i);
+                    if (mode.equalsIgnoreCase("Office")) {
+                        wrkFrm = "0";
+                    } else if (mode.equalsIgnoreCase("Home")) {
+                        wrkFrm = "1";
+                        getAddressSavedOrNot();
+                    } else if (mode.equalsIgnoreCase("Client")) {
+                        wrkFrm = "2";
+                    } else if (mode.equalsIgnoreCase("Vendor")) {
+                        wrkFrm = "3";
+                    } else if (mode.equalsIgnoreCase("Others")) {
+                        wrkFrm = "4";
+                    }
+                }
             }
 
             @Override
@@ -408,15 +411,19 @@ public class MarkInManageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (flag == 1) {
                     if (!tvAddress.getText().toString().equals("YOU ARE AT: null") || tvAddress.getText().toString().equals("YOU ARE AT: ")) {
-                        if (wrkFrm.equals("1")){
-                            if (approvalList.contains("Approved")){
-                                checkDistance();
-                            }else {
-                                Toast.makeText(getApplicationContext(), "Sorry! Your address has not been approved by your supervisor.", Toast.LENGTH_LONG).show();
+                        if (!wrkFrm.equals("")){
+                            if (wrkFrm.equals("1")){
+                                if (approvalList.contains("Approved")){
+                                    checkDistance();
+                                }else {
+                                    Toast.makeText(getApplicationContext(), "Sorry! Your address has not been approved by your supervisor.", Toast.LENGTH_LONG).show();
 
+                                }
+                            }else {
+                                dailyActivity();
                             }
                         }else {
-                            dailyActivity();
+                            Toast.makeText(getApplicationContext(), "Please select your punch type", Toast.LENGTH_LONG).show();
                         }
 
 

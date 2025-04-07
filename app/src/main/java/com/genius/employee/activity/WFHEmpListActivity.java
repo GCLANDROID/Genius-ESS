@@ -283,8 +283,8 @@ public class WFHEmpListActivity extends AppCompatActivity {
         llLoader.setVisibility(View.VISIBLE);
         llMain.setVisibility(View.GONE);
         llNoData.setVisibility(View.GONE);
-        String surl="https://cloud.geniusconsultant.com/GeniusESS/API/ManageEmployee/AttendanceDateReport?EmpID=2070000031&curDate="+formaDate;
-       // String surl = APi.sAttendanceDateReportApi+"EmpID=" + pref.getSecureEmpId() + "&curDate=" + formaDate;
+
+        String surl = APi.sAttendanceDateReportApi+"EmpID=" + pref.getSecureEmpId() + "&curDate=" + formaDate;
         Log.d("inputactivity", surl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
                 new Response.Listener<String>() {
