@@ -228,6 +228,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 alertDialog1.dismiss();
+                onBackPressed();
             }
         });
         TextView tvSuccess = (TextView) dialogView.findViewById(R.id.tvSuccess);

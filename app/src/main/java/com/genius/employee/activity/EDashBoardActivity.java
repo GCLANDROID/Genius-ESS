@@ -898,7 +898,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("ert", error.toString());
-                open();
+                open("Get_apkversion");
             }
         }) {
 
@@ -975,7 +975,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("ert", error.toString());
-                open();
+                open("GetLastWorkingDay");
             }
         }) {
 
@@ -1056,7 +1056,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("ert", error.toString());
-                open();
+                open("isPasswordExpire");
             }
         }) {
             @Override
@@ -1139,7 +1139,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("Get_Lebel_Id_erreo", error.toString());
-                open();
+                open("ManageEmployee/Hierarchy");
             }
         }) {
 
@@ -1249,7 +1249,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Manage_Appointment_error: "+error.toString());
-                open();
+                open("ManageAppointment/IsAccepted");
             }
         }) {
             @Override
@@ -1323,7 +1323,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Apprisel_Letter_error: "+ error.toString());
-                open();
+                open("BulkAppLetter/IsAccepted");
             }
         }) {
             @Override
@@ -1396,7 +1396,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Apprisel_Letter_Check_For_error: "+ error.toString());
-                open();
+                open("SrAppLetter/IsAccepted");
             }
         }) {
             @Override
@@ -1612,7 +1612,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Save_Device_ID_error: "+error.toString());
-                open();
+                open("DEMNotification/AddDeviceDetails");
             }
         }) {
 
@@ -1677,7 +1677,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("PF_Link_Error: ", error.toString());
-                open();
+                open("Utility/GetPFManagementURL");
             }
         }) {
             @Override
@@ -1747,7 +1747,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("ert", error.toString());
-                open();
+                open("IPConfig/GetOTP");
             }
         }) {
             @Override
@@ -1812,7 +1812,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Apprisal_Pdf: "+ error.toString());
-                open();
+                open("BulkAppLetter/GetBulkLetter");
             }
         }) {
             @Override
@@ -1879,7 +1879,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e("ert", error.toString());
-                open();
+                open("SrAppLetter/GetSrLetter");
             }
         }) {
             @Override
@@ -1942,7 +1942,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Apprisal_Pdf_For_View_error: "+ error.toString());
-                open();
+                open("BulkAppLetter/GetBulkLetter");
             }
         }) {
             @Override
@@ -2005,7 +2005,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                 //Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
 
                 Log.e(TAG,"Apprisal_Pdf_For_View_Snr_error"+ error.toString());
-                open();
+                open("SrAppLetter/GetSrLetter");
             }
         }) {
             @Override
@@ -2023,7 +2023,7 @@ public class EDashBoardActivity extends AppCompatActivity {
 
     }
 
-    public void open() {
+    public void open(String apiname) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Something Went Wrong.");
         alertDialogBuilder.setPositiveButton("OK",

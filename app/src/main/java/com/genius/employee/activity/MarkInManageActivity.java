@@ -201,6 +201,7 @@ public class MarkInManageActivity extends AppCompatActivity {
             wrkHomeList.add("Vendor");
             wrkHomeList.add("Others");
         }else {
+            wrkHomeList.add("Please Select");
             wrkHomeList.add("Office");
             wrkHomeList.add("Home");
             wrkHomeList.add("Client");
@@ -367,7 +368,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                         wrkFrm = "0";
                     } else if (mode.equalsIgnoreCase("Home")) {
                         wrkFrm = "1";
-                        getAddressSavedOrNot();
+                       // getAddressSavedOrNot();
                     } else if (mode.equalsIgnoreCase("Client")) {
                         wrkFrm = "2";
                     } else if (mode.equalsIgnoreCase("Vendor")) {
@@ -412,16 +413,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                 if (flag == 1) {
                     if (!tvAddress.getText().toString().equals("YOU ARE AT: null") || tvAddress.getText().toString().equals("YOU ARE AT: ")) {
                         if (!wrkFrm.equals("")){
-                            if (wrkFrm.equals("1")){
-                                if (approvalList.contains("Approved")){
-                                    checkDistance();
-                                }else {
-                                    Toast.makeText(getApplicationContext(), "Sorry! Your address has not been approved by your supervisor.", Toast.LENGTH_LONG).show();
-
-                                }
-                            }else {
-                                dailyActivity();
-                            }
+                            dailyActivity();
                         }else {
                             Toast.makeText(getApplicationContext(), "Please select your punch type", Toast.LENGTH_LONG).show();
                         }

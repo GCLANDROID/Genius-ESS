@@ -44,6 +44,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
     ImageView imgBack,imgHome;
     AlertDialog alerDialog1;
     Pref pref;
+    TextView tvForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
         imgBack=(ImageView)findViewById(R.id.imgBack);
         imgHome=(ImageView)findViewById(R.id.imgHome);
-
+        tvForgotPassword=(TextView) findViewById(R.id.tvForgotPassword);
 
     }
 
@@ -109,6 +110,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 Intent intent=new Intent(ChangePasswordActivity.this,EDashBoardActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ChangePasswordActivity.this,ForgotPasswordActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
     }
