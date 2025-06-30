@@ -169,6 +169,7 @@ public class EDashBoardActivity extends AppCompatActivity {
     }
 
     private void initialize() {
+        GeniusHRTechPopUp();
         tvLoginTime=(TextView)findViewById(R.id.tvLoginTime);
         Date cd = Calendar.getInstance().getTime();
         SimpleDateFormat def = new SimpleDateFormat("dd-MMM-yyyy");
@@ -2206,5 +2207,95 @@ public class EDashBoardActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         //getLoginTime();
+    }
+
+    public void GeniusHRTechPopUp() {
+
+        String surl = "https://gsppi.geniusconsultant.com/GSPPI_API_V2/api/General/GeniusHRTechPopUp";
+        Log.d("inputLogin", surl);//
+
+        final ProgressDialog pd=new ProgressDialog(EDashBoardActivity.this);
+        pd.setMessage("Loading.....");
+        pd.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("responseLogin", response);
+                        pd.dismiss();
+
+                        try {
+                            JSONObject job1 = new JSONObject(response);
+                            Log.e("response12", "@@@@@@" + job1);
+                            String Response_Code=job1.optString("Response_Code");
+                            if (Response_Code.equals("101")){
+                                JSONObject Response_Data=job1.optJSONObject("Response_Data");
+                                String Base64Image=Response_Data.optString("Base64Image");
+                                int Status=Response_Data.optInt("Status");
+                                if (Status==1){
+                                    shoeDialog(Base64Image);
+                                }
+
+                            }
+
+
+
+
+
+                            // boolean _status = job1.getBoolean("status");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(EDashBoardActivity.this, "Volly Error", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                pd.dismiss();
+                //  Toast.makeText(LoginActivity.this, "volly 2" + error.toString(), Toast.LENGTH_LONG).show();
+
+                Log.e("ert", error.toString());
+            }
+        }) {
+
+        };
+        AppController.getInstance().addToRequestQueue(stringRequest, "string_req");
+
+    }
+
+
+    private void shoeDialog(String image) {
+        androidx.appcompat.app.AlertDialog.Builder dialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(EDashBoardActivity.this, R.style.CustomDialogNew);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View dialogView = inflater.inflate(R.layout.name_change_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        ImageView imgCancel=(ImageView)dialogView.findViewById(R.id.imgCancel);
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        ImageView imgModal=(ImageView)dialogView.findViewById(R.id.imgModal);
+        byte[] bytes   = Base64.decode(image, Base64.DEFAULT);
+        Bitmap bitmap  = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+
+        // 3.  Show it
+        imgModal.setImageBitmap(bitmap);
+
+
+        alertDialog = dialogBuilder.create();
+        alertDialog.setCancelable(true);
+        Window window = alertDialog.getWindow();
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setGravity(Gravity.CENTER);
+        alertDialog.show();
+
+
     }
 }

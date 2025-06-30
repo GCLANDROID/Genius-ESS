@@ -199,8 +199,8 @@ public class InsuranceActivity extends AppCompatActivity {
                                 PolicyBenefitDoc = APi.insurancedocurl + responseData.optString("PolicyBenefitDoc");
                                 DeListedHospitalsDoc = APi.insurancedocurl + responseData.optString("DeListedHospitalsDoc");
                                 ClaimFormDoc = APi.insurancedocurl + responseData.optString("ClaimFormDoc");
-                                CardLink = APi.insurancedocurl + responseData.optString("CardLink");
-                                HospitalsNetworkLink = APi.insurancedocurl + responseData.optString("HospitalsNetworkLink");
+                                CardLink =  responseData.optString("CardLink");
+                                HospitalsNetworkLink =  responseData.optString("HospitalsNetworkLink");
 
                             }
 
