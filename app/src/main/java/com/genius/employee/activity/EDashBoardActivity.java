@@ -40,9 +40,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +61,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.androidnetworking.interfaces.UploadProgressListener;
 import com.genius.employee.R;
 import com.genius.employee.activity.leaveapplication.LeaveApplicationActivity;
 import com.genius.employee.model.MarkInViewModel;
@@ -117,7 +120,7 @@ public class EDashBoardActivity extends AppCompatActivity {
     boolean responseStatus;
     String playversion;
     String version;
-    AlertDialog alertDialog, al1, al2, al3, al4, al5, al6, al7;
+    AlertDialog alertDialog, al1, al2, al3, al4, al5, al6, al7,expDialog;
     LinearLayout llDailyActivity;
     String lebelId;
     String deptId;
@@ -1022,6 +1025,7 @@ public class EDashBoardActivity extends AppCompatActivity {
                             String responseText = job1.optString("responseText");
                             String responseData = job1.optString("responseData");
                             String responseCode = job1.optString("responseCode");
+                            String image_url=job1.optString("image_url");
                             jrCode = job1.optString("responseID");
                             int count = Integer.parseInt(responseData);
                             if (count > 1) {
@@ -1039,6 +1043,12 @@ public class EDashBoardActivity extends AppCompatActivity {
                                 showPasswordDialog(responseText);
                             } else {
                                 saveDeviceID();
+                            }
+
+                            if (image_url.equalsIgnoreCase("0")){
+                                showExperienceDialog();
+                            }else {
+
                             }
 
 
@@ -1186,6 +1196,50 @@ public class EDashBoardActivity extends AppCompatActivity {
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);
         al2.show();
+
+
+    }
+
+
+    private void showExperienceDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(EDashBoardActivity.this, R.style.CustomDialogNew);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View dialogView = inflater.inflate(R.layout.dialog_experince_add, null);
+        dialogBuilder.setView(dialogView);
+         Switch swFresher=(Switch)dialogView.findViewById(R.id.swFresher);
+        swFresher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    addFresher();
+
+                } else {
+
+                }
+            }
+        });
+        TextView tvClick=(TextView)dialogView.findViewById(R.id.tvClick);
+        tvClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(EDashBoardActivity.this,ExperienceActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        ImageView imgCancel=(ImageView)dialogView.findViewById(R.id.imgCancel);
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expDialog.dismiss();
+            }
+        });
+        expDialog = dialogBuilder.create();
+        expDialog.setCancelable(false);
+        Window window = expDialog.getWindow();
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setGravity(Gravity.CENTER);
+        expDialog.show();
 
 
     }
@@ -2297,5 +2351,60 @@ public class EDashBoardActivity extends AppCompatActivity {
         alertDialog.show();
 
 
+    }
+
+
+    private void addFresher() {
+        ProgressDialog pd=new ProgressDialog(EDashBoardActivity.this);
+        pd.setMessage("Loading..");
+        pd.setCancelable(false);
+        pd.show();
+        AndroidNetworking.upload(APi.sfresherApi)
+                .addMultipartParameter("employeeId", pref.getSecureEmpId())
+                .addHeaders("Authorization","Bearer "+pref.getAccessToken())
+
+                .setTag("uploadTest")
+                .setPriority(Priority.HIGH)
+                .build()
+                .setUploadProgressListener(new UploadProgressListener() {
+                    @Override
+                    public void onProgress(long bytesUploaded, long totalBytes) {
+                        pd.show();
+
+                    }
+                })
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        pd.dismiss();
+                        JSONObject job = response;
+                        boolean responseStatus = job.optBoolean("responseStatus");
+                        String responseText=job.optString("responseText");
+                        if (responseStatus) {
+                            expDialog.dismiss();
+
+                        } else {
+                            Toast.makeText(EDashBoardActivity.this, responseText, Toast.LENGTH_LONG).show();
+                            showExperienceDialog();
+
+                        }
+
+
+                        // boolean _status = job1.getBoolean("status");
+
+
+                        // do anything with response
+                    }
+
+                    @Override
+                    public void onError(ANError error) {
+                        // handle error
+                        pd.dismiss();
+                        showExperienceDialog();
+                        Toast.makeText(EDashBoardActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+
+                    }
+                });
     }
 }

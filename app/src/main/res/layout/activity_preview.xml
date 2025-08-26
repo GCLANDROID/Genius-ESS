@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".activity.PreviewActivity"
     android:background="@color/maincolor"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"

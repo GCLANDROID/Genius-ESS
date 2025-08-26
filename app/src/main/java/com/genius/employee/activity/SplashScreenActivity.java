@@ -286,7 +286,7 @@ public class SplashScreenActivity extends AppCompatActivity implements GoogleApi
 
     private void elsepart() {
         pref.saveIntentFlag("login");
-        startActivity(new Intent(SplashScreenActivity.this, EDashBoardActivity.class));
+        startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
         customType(SplashScreenActivity.this, "left-to-right");
         finish();
     }

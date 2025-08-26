@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/lldesign"
     tools:context=".activity.ClintOfficeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"

@@ -59,4 +59,13 @@
     <string name="take_picture">Recognize</string>
     <string name="add_person">Add</string>
     <string name="title_activity_add_person">AddPerson</string>
+
+
+    <string name="org_name">Organization Name <font color='#F44336'>*</font></string>
+    <string name="from_date">From Date <font color='#F44336'>*</font></string>
+    <string name="to_date">To Date <font color='#F44336'>*</font></string>
+    <string name="designation">Designation <font color='#F44336'>*</font></string>
+    <string name="experience">Experience <font color='#F44336'>*</font></string>
+    <string name="ctc">CTC <font color='#F44336'>*</font></string>
+    <string name="location">Location <font color='#F44336'>*</font></string>
 </resources>

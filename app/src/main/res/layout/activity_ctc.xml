@@ -7,7 +7,7 @@
     tools:context=".activity.CuurentCTCActivity"
     android:orientation="vertical"
     android:background="@android:color/white"
-    >
+    android:fitsSystemWindows="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"

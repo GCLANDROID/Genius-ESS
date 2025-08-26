@@ -30,6 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.ExperienceActivity"></activity>
         <activity android:name=".activity.WFHAddressDetailsActivity"></activity>
         <activity android:name=".activity.InsuranceActivity"
             android:screenOrientation="userPortrait"></activity>

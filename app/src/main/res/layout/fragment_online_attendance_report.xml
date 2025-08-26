@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".fragment.OnlineAttendanceReportFragment">
+    tools:context=".fragment.OnlineAttendanceReportFragment"
+    android:fitsSystemWindows="true">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

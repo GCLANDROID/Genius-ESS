@@ -66,4 +66,7 @@ public class APi {
     public static String sexperienceApi=baseurl2+"employee/experience?";
     public static String sexperienceAddApi=baseurl2+"employee/experience";
     public static String sdelexperienceApi=baseurl2+"employee/del-experience?";
+    public static String sfresherApi=baseurl2+"employment/fresher";
+    public static String ADD_EXPERIENCE = baseurl2+"employment/add";
+    public static String GET_EXPERIENCE =  baseurl2+"employment/history";
 }

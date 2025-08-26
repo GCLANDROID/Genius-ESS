@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".activity.MarkInManageActivity"
     android:orientation="vertical"
-    android:background="@drawable/llgradientdesign1">
+    android:background="@drawable/llgradientdesign1"
+    android:fitsSystemWindows="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"

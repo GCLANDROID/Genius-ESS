@@ -230,6 +230,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     pref.saveCheckFlag("1");
+                    pref.saveNormalFlag("1");
                 } else {
                     pref.saveCheckFlag("2");
                     pref.saveNormalFlag("2");
