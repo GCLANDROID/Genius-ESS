@@ -207,7 +207,7 @@ public class FeedbackLoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         String base64 = Base64.encodeToString(data, Base64.DEFAULT).replaceAll("\\s+", "");;
-        String surl = "http://111.93.182.174/GeniusiOSApi/api/get_GCLAuthenticateWithEncryption?MasterID=" + etUserId.getText().toString() + "&Password=" + base64 + "&IMEI=0000&Version=" + version + "&SecurityCode=" + domainId + "&DeviceID=" + refreshedToken + "&DeviceType=A";
+        String surl = "https://gsppi.geniusconsultant.com/GeniusiOSApi/api/get_GCLAuthenticateWithEncryption?MasterID=" + etUserId.getText().toString() + "&Password=" + base64 + "&IMEI=0000&Version=" + version + "&SecurityCode=" + domainId + "&DeviceID=" + refreshedToken + "&DeviceType=A";
         Log.d("inputLogin", surl);
         final ProgressDialog progressBar = new ProgressDialog(this);
         progressBar.setCancelable(true);//you can cancel it by pressing back button

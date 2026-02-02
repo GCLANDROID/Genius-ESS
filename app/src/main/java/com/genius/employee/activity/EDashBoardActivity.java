@@ -285,7 +285,7 @@ public class EDashBoardActivity extends AppCompatActivity {
 
         llLogout = (LinearLayout) findViewById(R.id.llLogout);
         llHoliday = (LinearLayout) findViewById(R.id.llHoliday);
-        llFeedBack = (LinearLayout) findViewById(R.id.llFeedBack);
+        llFeedBack = (LinearLayout) findViewById(R.id.llsFeedBack);
         llMarkIn = (LinearLayout) findViewById(R.id.llMarkIn);
         llCP = (LinearLayout) findViewById(R.id.llCP);
         llDeclaration = (LinearLayout) findViewById(R.id.llDeclaration);
@@ -658,10 +658,7 @@ public class EDashBoardActivity extends AppCompatActivity {
         llFeedBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EDashBoardActivity.this, FeedbackLoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                customType(EDashBoardActivity.this, "left-to-right");
+                getFeebackURL();
             }
         });
 
@@ -2406,5 +2403,68 @@ public class EDashBoardActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+
+    private void getFeebackURL() {
+        ProgressDialog pd=new ProgressDialog(EDashBoardActivity.this);
+        pd.setMessage("Loading");
+        pd.show();
+        pd.setCancelable(false);
+
+        String surl = "https://gsppi.geniusconsultant.com/GSPPI_API_V2/api/General/StaffingClientFeedback";
+        Log.d("inputactivity", surl);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, surl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        Log.d("responseAttendance", response);
+                        pd.dismiss();
+
+                        // attendabceInfiList.clear();
+
+
+                        try {
+                            JSONObject job1 = new JSONObject(response);
+                            Log.e("response12", "@@@@@@" + job1);
+                            String responseText = job1.optString("responseText");
+                            JSONArray Response_Data=job1.optJSONArray("Response_Data");
+                            JSONObject frstOBJ=Response_Data.optJSONObject(0);
+                            String FeedbackUrl=frstOBJ.optString("FeedbackUrl");
+                            Intent intent=new Intent(EDashBoardActivity.this, FeebackWebActivity.class);
+                            intent.putExtra("url",FeedbackUrl);
+                            startActivity(intent);
+
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            // Toast.makeText(AttendanceReportActivity.this, "Volly Error", Toast.LENGTH_LONG).show();
+
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                pd.dismiss();
+
+
+                // Toast.makeText(AttendanceReportActivity.this, "volly 2"+error.toString(), Toast.LENGTH_LONG).show();
+                Log.e("ert", error.toString());
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+pref.getAccessToken());
+                return params;
+            }
+
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(EDashBoardActivity.this);
+        requestQueue.add(stringRequest);
     }
 }

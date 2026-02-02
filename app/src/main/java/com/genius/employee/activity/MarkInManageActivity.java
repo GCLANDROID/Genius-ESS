@@ -848,8 +848,13 @@ public class MarkInManageActivity extends AppCompatActivity {
         llCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //cameraIntent();
-                AndroidXCameraActivity.launch(MarkInManageActivity.this);
+                if (pref.getEmpId().equalsIgnoreCase("2070000131")){
+                    cameraIntent();
+                }else {
+                    AndroidXCameraActivity.launch(MarkInManageActivity.this);
+                }
+
+                //AndroidXCameraActivity.launch(MarkInManageActivity.this);
             }
         });
 

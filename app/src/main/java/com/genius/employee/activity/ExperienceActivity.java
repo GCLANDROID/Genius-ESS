@@ -109,7 +109,7 @@ public class ExperienceActivity extends AppCompatActivity {
         AndroidNetworking.get(APi.GET_EXPERIENCE)
                 .addQueryParameter("id",pref.getSecureEmpId())
                 .setTag("uploadTest")
-                .addHeaders("Authorization", "Bearer B3Y-twPCwgtLa3Ig7PuvcHENQ47j-jw6Vt2YY_mmU7Q_sWpqHOm5ZfKw_KCATSJad_DqC7QC1Q45l3vwYGExZgHtpCQE1Stf3r594AbrRh6zAPefx350fr0GqZQR6tzF4zvTxtBbDaiU6zwwKzvdy6Qz4mKafGLt4FZHJW17_uz6MmCbWpOtj1jTWwlWx8v3yTMoFpBy67Bw5VUtO0rg-c6cTmr_3elXpxkvJmFtEudVoh6n0eAZChFA385OhigghyrwkjWgROT6m7nxMSl1GbegYZ2Ra2wt1lB7Sg1zme4")
+                .addHeaders("Authorization", "Bearer "+pref.getAccessToken())
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -200,7 +200,7 @@ public class ExperienceActivity extends AppCompatActivity {
         AndroidNetworking.post(APi.ADD_EXPERIENCE)
                 .addJSONObjectBody(jsonObject)
                 .setTag("uploadTest")
-                .addHeaders("Authorization", "Bearer B3Y-twPCwgtLa3Ig7PuvcHENQ47j-jw6Vt2YY_mmU7Q_sWpqHOm5ZfKw_KCATSJad_DqC7QC1Q45l3vwYGExZgHtpCQE1Stf3r594AbrRh6zAPefx350fr0GqZQR6tzF4zvTxtBbDaiU6zwwKzvdy6Qz4mKafGLt4FZHJW17_uz6MmCbWpOtj1jTWwlWx8v3yTMoFpBy67Bw5VUtO0rg-c6cTmr_3elXpxkvJmFtEudVoh6n0eAZChFA385OhigghyrwkjWgROT6m7nxMSl1GbegYZ2Ra2wt1lB7Sg1zme4")
+                .addHeaders("Authorization", "Bearer "+pref.getAccessToken())
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {

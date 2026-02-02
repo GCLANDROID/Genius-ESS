@@ -30,10 +30,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ExperienceActivity"></activity>
-        <activity android:name=".activity.WFHAddressDetailsActivity"></activity>
-        <activity android:name=".activity.InsuranceActivity"
-            android:screenOrientation="userPortrait"></activity>
+        <activity
+            android:name=".activity.FeebackWebActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".activity.ExperienceActivity" />
+        <activity android:name=".activity.WFHAddressDetailsActivity" />
+        <activity
+            android:name=".activity.InsuranceActivity"
+            android:screenOrientation="userPortrait" />
         <activity
             android:name=".activity.AndroidXCameraActivity"
             android:exported="false" />
