@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/ccd_bg"
+    tools:context=".activity.clientcall.PhysicalCallVisitLogActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="10dp">
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/backimg"
+            app:tint="@color/white"></ImageView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="Log Book"></TextView>
+        </LinearLayout>
+        <ImageView
+
+            android:id="@+id/imgHome"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/homeimg"
+            app:tint="@color/white"></ImageView>
+    </LinearLayout>
+    <ImageView
+        android:src="@mipmap/visit_log"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="150dp"></ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lldesign"
+            android:padding="20dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@color/pinkone"
+                        android:text="Client Name"></TextView>
+                    <TextView
+                        android:id="@+id/tvClientName"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:text="IFB Pvt Ltd."></TextView>
+                </LinearLayout>
+                <pl.droidsonroids.gif.GifImageView
+                    android:visibility="gone"
+                    android:id="@+id/imgProgress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/progress"></pl.droidsonroids.gif.GifImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/pinkone"
+                    android:text="Client Address"></TextView>
+                <TextView
+                    android:id="@+id/tvClientAddress"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="12/7 Lake View Apartments Gariahat Road Kolkata -7001021"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/pinkone"
+                    android:text="Purpose of call"></TextView>
+                <TextView
+                    android:id="@+id/tvPurposecall"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Client Demo"></TextView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/pinkone"
+                    android:text="Transportation"></TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tvTransportation"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:text="Private - Two Wheeler (Own)"></TextView>
+                    <ImageView
+                        android:id="@+id/imgEdit"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/editicon"></ImageView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/lldesign"
+                android:backgroundTint="@color/pink"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Reached Client Location"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

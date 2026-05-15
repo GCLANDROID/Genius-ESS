@@ -105,7 +105,8 @@ public class DownloadTask {
                 //Get File if SD card is present
                 if (new CheckForSDCard().isSDCardPresent()) {
 
-                    apkStorage = new File(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)));
+                    //apkStorage = new File(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)));
+                    apkStorage = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
                 } else
                     Toast.makeText(context, "Oops!! There is no SD Card.", Toast.LENGTH_SHORT).show();
 

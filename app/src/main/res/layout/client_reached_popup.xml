@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/lldesign"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+        <ImageView
+            android:id="@+id/imgCross"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/close"
+            app:tint="@color/black"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/pinkone"
+            android:text="Your Current Address"></TextView>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lldesign21"
+            android:padding="10dp">
+            <TextView
+                android:text="12/7 Lake View Apartments Gariahat Road Kolkata -7001021"
+                android:id="@+id/tvCurrentAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/pinkone"
+                android:text="Capture Proof"></TextView>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/camera"></ImageView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/lldesign21"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/pinkone"
+                android:text="Upload Here"></TextView>
+        </LinearLayout>
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/tvSave"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/lldesign"
+            android:backgroundTint="@color/pink"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Submit"></TextView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -277,7 +277,7 @@ public class EDashBoardActivity extends AppCompatActivity {
         llDailyActivity = (LinearLayout) findViewById(R.id.llDailyActivity);
         llAdmin = (LinearLayout) findViewById(R.id.llAdmin);
         if (pref.getEmpId().equalsIgnoreCase("2070002087")) {
-            llAdmin.setVisibility(View.VISIBLE);
+            llAdmin.setVisibility(View.GONE);
         } else {
             llAdmin.setVisibility(View.GONE);
         }

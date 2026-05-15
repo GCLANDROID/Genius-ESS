@@ -21,6 +21,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/llCredentials"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
@@ -30,11 +39,6 @@
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
                 android:text="LOGIN!"></TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -165,6 +169,447 @@
                             android:layout_marginLeft="15dp"
                             android:src="@drawable/ic_right_arrow_forward"/>
                     </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/llPINRegistration"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/passwordlock"
+                            ></ImageView>
+
+
+
+
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:textSize="22sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set-Up Your mPIN"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Please security purposes, Please verify your MPIN"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+
+                            android:id="@+id/llEnterNewMPIN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/border_background_2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvMpinText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Enter New mPIN"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                            <com.otpview.OTPTextView
+                                android:id="@+id/otp_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textColor="@android:color/black"
+                                app:box_margin="10dp"
+                                app:height="15dp"
+                                app:hide_otp="true"
+                                app:hide_otp_drawable="@drawable/ovel_otp_box_hide"
+                                app:length="4"
+                                app:otp=""
+                                app:otp_box_background="@drawable/ovel_epin_background"
+                                app:otp_box_background_active="@drawable/ovel_otp_box_active"
+                                app:otp_box_background_error="@drawable/ovel_otp_box_error"
+                                app:otp_box_background_inactive="@drawable/ovel_epin_background"
+                                app:otp_box_background_success="@drawable/ovel_epin_background"
+                                app:otp_text_size="20sp"
+                                app:width="15dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+
+                            android:id="@+id/llConfirmMPIN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvConfirmMpinText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Confirm mPIN"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                            <com.otpview.OTPTextView
+                                android:id="@+id/otp_view_confirm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textColor="@android:color/black"
+                                app:box_margin="10dp"
+                                app:height="15dp"
+                                app:hide_otp="true"
+                                app:hide_otp_drawable="@drawable/ovel_otp_box_hide"
+                                app:length="4"
+                                app:otp=""
+                                app:otp_box_background="@drawable/ovel_epin_background"
+                                app:otp_box_background_active="@drawable/ovel_otp_box_active"
+                                app:otp_box_background_error="@drawable/ovel_otp_box_error"
+                                app:otp_box_background_inactive="@drawable/ovel_epin_background"
+                                app:otp_box_background_success="@drawable/ovel_epin_background"
+                                app:otp_text_size="20sp"
+                                app:width="15dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/lldesign7"
+                        android:columnCount="3"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="5"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="6"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="7"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="8"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="9"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <LinearLayout
+                            android:id="@+id/llBackspace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_columnWeight="1"
+                            android:gravity="center"
+
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/outline_backspace" />
+                        </LinearLayout>
+                    </GridLayout>
+
+
+
+                    <Button
+                        android:id="@+id/btnMPIN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginHorizontal="35dp"
+                        android:background="@drawable/button_background_2"
+                        android:text="Setup mPIN"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/llPINLogin"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/passwordlock"
+                        ></ImageView>
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:text="Login using mPIN!"></TextView>
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+
+
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:textSize="16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enter mPIN below"
+                            android:textColor="@color/white" />
+
+
+
+                        <LinearLayout
+
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:padding="10dp"
+                            android:background="@drawable/border_background_2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+
+
+                            <com.otpview.OTPTextView
+                                android:id="@+id/otp_view_Login"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textColor="@android:color/black"
+                                app:box_margin="10dp"
+                                app:height="15dp"
+                                app:hide_otp="true"
+                                app:hide_otp_drawable="@drawable/ovel_otp_box_hide"
+                                app:length="4"
+                                app:otp=""
+                                app:otp_box_background_active="@drawable/ovel_otp_box_active"
+                                app:otp_box_background_error="@drawable/ovel_otp_box_error"
+                                app:otp_box_background_inactive="@drawable/ovel_epin_background"
+                                app:otp_box_background_success="@drawable/ovel_epin_background"
+                                app:otp_text_size="20sp"
+                                app:width="15dp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right">
+                            <TextView
+                                android:layout_marginTop="20dp"
+                                android:textSize="14sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Forgot mPIN?"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+                    <Button
+
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginHorizontal="35dp"
+                        android:background="@drawable/button_background_2"
+                        android:text="Login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

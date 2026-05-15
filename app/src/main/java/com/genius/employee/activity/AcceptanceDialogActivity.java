@@ -110,7 +110,7 @@ public class AcceptanceDialogActivity extends AppCompatActivity {
         pref=new Pref(AcceptanceDialogActivity.this);
         path=getIntent().getStringExtra("path");
         pdfView=(PDFView)findViewById(R.id.pdfView);
-        File file=new File("/storage/emulated/0/Download/"+path);
+        File file=new File("/storage/emulated/0/Android/data/com.genius.employee/files/Download/"+path);
         pdfView.fromFile(file)
                 // all pages are displayed by default
                 .enableSwipe(true) // allows to block changing pages using swipe

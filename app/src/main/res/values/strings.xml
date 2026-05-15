@@ -39,7 +39,7 @@
     <color name="dot_light_screen6">#e4b5fc</color>
     <color name="dot_light_screen7">#e4b5fc</color>
     <string name="app_name">Genius.ESS</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAfhvl3a57BdGtWJdPlz5M-ywMX9W-C4Gk</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBuxUn1s4S2yv8fqwd0wGUTFegxNyASL1g</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">NEXT</string>
 

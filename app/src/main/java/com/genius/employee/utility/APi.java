@@ -5,6 +5,8 @@ public class APi {
     public static String localsUrl="http://171.16.1.150/GeniusESSMobile/api/";
     public static double lattitude=0.0;
     public static double longitude=0.0;
+    public static int SharingFlag=0;
+    public static int transportMode=0;
     //http://171.16.1.23/
     public static String localurl="http://171.16.1.147/";
     public static String baselocalurl=localurl+"GeniusESSMobile/api/v2/";

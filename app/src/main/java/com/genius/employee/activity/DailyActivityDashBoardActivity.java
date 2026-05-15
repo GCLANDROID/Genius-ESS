@@ -18,6 +18,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.genius.employee.R;
+import com.genius.employee.activity.clientcall.ClientCallDashboardActivity;
+import com.genius.employee.activity.clientcall.ClientCallReportActivity;
 import com.genius.employee.utility.APi;
 import com.genius.employee.utility.GPSTracker;
 import com.genius.employee.utility.NetworkConnectionCheck;
@@ -95,7 +97,9 @@ public class DailyActivityDashBoardActivity extends AppCompatActivity {
 
                     if (latitude!=0.0) {
                         if (connectionCheck.isNetworkAvailable()) {
-                            getStatus();
+                            //getStatus();
+                            Intent intent = new Intent(DailyActivityDashBoardActivity.this, ClientCallDashboardActivity.class);
+                            startActivity(intent);
                         }else {
                             Toast.makeText(getApplicationContext(), "Please enable your network connection", Toast.LENGTH_SHORT).show();
                         }
@@ -110,15 +114,19 @@ public class DailyActivityDashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (lebelId.equals("2060000003")||pref.getEmpId().equals("2070002087")) {
-                    Intent intent = new Intent(DailyActivityDashBoardActivity.this, SupReportDashboardActivity.class);
+                   /* Intent intent = new Intent(DailyActivityDashBoardActivity.this, SupReportDashboardActivity.class);
                     intent.putExtra("lebelId", lebelId);
                     intent.putExtra("deptId", deptId);
-                    startActivity(intent);
+                    startActivity(intent);*/
                 } else {
-                    Intent intent = new Intent(DailyActivityDashBoardActivity.this, NumberVisitActivity.class);
+                   /* Intent intent = new Intent(DailyActivityDashBoardActivity.this, NumberVisitActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
+                    startActivity(intent);*/
                 }
+
+                Intent intent = new Intent(DailyActivityDashBoardActivity.this, ClientCallReportActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 
