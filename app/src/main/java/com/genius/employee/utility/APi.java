@@ -71,4 +71,5 @@ public class APi {
     public static String sfresherApi=baseurl2+"employment/fresher";
     public static String ADD_EXPERIENCE = baseurl2+"employment/add";
     public static String GET_EXPERIENCE =  baseurl2+"employment/history";
+    public static String Employee_Consent =  "https://cloud.geniusconsultant.com/GeniusESS/api/v2/consent/employeeconsent";
 }

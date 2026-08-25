@@ -72,10 +72,11 @@ import com.genius.employee.utility.AppController;
 import com.genius.employee.utility.GPSTracker;
 import com.genius.employee.utility.Pref;
 import com.genius.employee.utility.RetrofitService;
+import com.genius.employee.utility.ShowDialog;
 import com.genius.employee.utility.UploadObject;
 import com.genius.employee.utility.Util;
-import com.google.android.cameraview.LongImageBackCameraActivity;
-import com.google.android.cameraview.LongImageCameraActivity;
+/*import com.google.android.cameraview.LongImageBackCameraActivity;
+import com.google.android.cameraview.LongImageCameraActivity;*/
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -182,7 +183,7 @@ public class MarkInManageActivity extends AppCompatActivity {
     String mode;
     ArrayList<String>approvalList=new ArrayList<>();
     AlertDialog alertDialog;
-
+    int locationGetApiCallCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,23 +232,24 @@ public class MarkInManageActivity extends AppCompatActivity {
 
         gps = new GPSTracker(MarkInManageActivity.this);
         if (gps.canGetLocation()) {
+            latitude = gps.getLatitude();
+            Log.d("saikatdas", String.valueOf(latitude));
+            longitude = gps.getLongitude();
+            Log.d("saikatdas", String.valueOf(longitude));
+            /*if (latitude==0.0 || longitude==0.0){
+                getLongitudeLatitude();
+            } else {
 
-                latitude = gps.getLatitude();
-                Log.d("saikatdas", String.valueOf(latitude));
-                longitude = gps.getLongitude();
-                Log.d("saikatdas", String.valueOf(longitude));
-
-
-        } else {
-
-
+            }*/
         }
+
+
 
         long futureTimestamp = System.currentTimeMillis() + (2 * 60 * 1000);
         TimerTextView timerText = (TimerTextView) findViewById(R.id.timerText);
         timerText.setEndTime(futureTimestamp);
 
-        getAPIKey();
+
         flImage = (FrameLayout) findViewById(R.id.flImage);
 
 
@@ -355,6 +357,40 @@ public class MarkInManageActivity extends AppCompatActivity {
             outtimer.start();
             btnSubmit.setText("Check In");
         }
+        getAPIKey();
+    }
+
+    private void getLongitudeLatitude() {
+        ProgressDialog pd=new ProgressDialog(MarkInManageActivity.this);
+        pd.setMessage("Please wait while we try to fetch your address.....");
+        pd.setCancelable(false);
+        pd.show();
+        if (locationGetApiCallCount <= 3){
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (latitude==0.0 || longitude==0.0) {
+                        //gps = new GPSTracker(MarkInManageActivity.this);
+                        latitude = gps.getLatitude();
+                        Log.d("saikatdas", String.valueOf(latitude));
+                        longitude = gps.getLongitude();
+                        Log.d("saikatdas", String.valueOf(longitude));
+                        getLongitudeLatitude();
+                    } else {
+                        latitude = gps.getLatitude();
+                        Log.d("saikatdas", String.valueOf(latitude));
+                        longitude = gps.getLongitude();
+                        Log.d("saikatdas", String.valueOf(longitude));
+                        pd.dismiss();
+                    }
+                    locationGetApiCallCount++;
+                }
+            }, 20000);
+        } else {
+            pd.dismiss();
+            getAPIKey();
+        }
     }
 
 
@@ -387,7 +423,17 @@ public class MarkInManageActivity extends AppCompatActivity {
         llImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fileOpenDilog();
+                if(address.isEmpty()){
+                    ShowDialog.showAlertDialog(MarkInManageActivity.this, "We’re unable to detect your current location. Please enable your location and try again to mark your attendance.",
+                            new ShowDialog.ResultListener() {
+                        @Override
+                        public void onSuccess() {
+                            finish();
+                        }
+                    });
+                } else {
+                    fileOpenDilog();
+                }
             }
         });
         flImage.setOnClickListener(new View.OnClickListener() {
@@ -461,7 +507,7 @@ public class MarkInManageActivity extends AppCompatActivity {
         tvCustom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LongImageCameraActivity.launch(MarkInManageActivity.this);
+                //LongImageCameraActivity.launch(MarkInManageActivity.this);
             }
         });
 
@@ -580,7 +626,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case LongImageCameraActivity.LONG_IMAGE_RESULT_CODE:
+            /*case LongImageCameraActivity.LONG_IMAGE_RESULT_CODE:
                 Log.e(TAG, "onActivityResult: ======: requestCode: "+requestCode);
                 Log.e(TAG, "onActivityResult: ======: requestCode: "+LongImageCameraActivity.LONG_IMAGE_RESULT_CODE);
                 Log.e(TAG, "onActivityResult: ======: resultCode "+resultCode);
@@ -607,7 +653,7 @@ public class MarkInManageActivity extends AppCompatActivity {
                     al2.dismiss();
                     // al2.dismiss();
                 }
-                break;
+                break;*/
             case AndroidXCameraActivity.LONG_IMAGE_RESULT_CODE:
                 Log.e(TAG, "onActivityResult: resultCode: "+resultCode);
                 Log.e(TAG, "onActivityResult: requestCode: "+requestCode);
@@ -861,9 +907,10 @@ public class MarkInManageActivity extends AppCompatActivity {
         llCustom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LongImageCameraActivity.launch(MarkInManageActivity.this);
+                //LongImageCameraActivity.launch(MarkInManageActivity.this);
                 //AndroidXCameraActivity.launch(MarkInManageActivity.this);
                 //al2.dismiss();
+                cameraIntent();
             }
         });
 
@@ -1063,7 +1110,15 @@ public class MarkInManageActivity extends AppCompatActivity {
                                     address = getCompleteAddressString(latitude, longitude);
                                     tvAddress.setText(address);
                                 }
-
+                                if(address.isEmpty()){
+                                   // tryToGetLatitudeLongitude();
+                                    ShowDialog.showAlertDialog(MarkInManageActivity.this, "We’re unable to detect your current location. Please enable your location and try again to mark your attendance.", new ShowDialog.ResultListener() {
+                                        @Override
+                                        public void onSuccess() {
+                                            finish();
+                                        }
+                                    });
+                                }
                             }
 
                         } catch (JSONException e) {
@@ -1098,6 +1153,29 @@ public class MarkInManageActivity extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
+    }
+
+    private void tryToGetLatitudeLongitude() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (latitude == 0.0 || longitude == 0.0 || address.isEmpty()) {
+                    latitude = gps.getLatitude();
+                    Log.d("saikatdas", String.valueOf(latitude));
+                    longitude = gps.getLongitude();
+                    Log.d("saikatdas", String.valueOf(longitude));
+                    getAPIKey();
+                    locationGetApiCallCount ++;
+                }
+                if(locationGetApiCallCount <= 3){
+                    tryToGetLatitudeLongitude();
+                } else if (locationGetApiCallCount == 3 && address.isEmpty()){
+
+                }
+
+            }
+        }, 3000);
     }
 
 
@@ -1394,6 +1472,7 @@ public class MarkInManageActivity extends AppCompatActivity {
         window.setGravity(Gravity.CENTER);
         alertDialog.show();
     }
+
 }
 
 

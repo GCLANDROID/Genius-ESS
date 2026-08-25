@@ -289,7 +289,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             /*;
 */
-                            getDetailsOfUser();
+                             getDetailsOfUser();
                         }else {
                             progressBar.dismiss();
                         }
@@ -428,11 +428,19 @@ public class LoginActivity extends AppCompatActivity {
                             pref.saveDeptId(DepartmentID);
                             String MasterPage=obj.optString("MasterPage");
                             pref.saveBranchId(MasterPage);
+                            boolean IsDPDPConsent = obj.optBoolean("IsDPDPConsent");
+                            if(IsDPDPConsent == false){
+                                Intent intent = new Intent(LoginActivity.this, ConsentFromActivity.class);
+                                startActivity(intent);
+                                customType(LoginActivity.this, "left-to-right");
+                                finish();
+                            } else {
+                                Intent intent = new Intent(LoginActivity.this, EDashBoardActivity.class);
+                                startActivity(intent);
+                                customType(LoginActivity.this, "left-to-right");
+                                finish();
+                            }
 
-                            Intent intent = new Intent(LoginActivity.this, EDashBoardActivity.class);
-                            startActivity(intent);
-                            customType(LoginActivity.this, "left-to-right");
-                            finish();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
